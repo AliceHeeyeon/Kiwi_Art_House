@@ -51,9 +51,11 @@ const About = () => {
             </button>
         </div>
 
-        <h2 className='page-title'>{about[0].title.rendered}</h2>
-        <img src={about[0].acf['image-aboutpage'].url} alt={about[0].acf['image-aboutpage'].title} />
-        <p className='about-description'>{about[0].acf.about_description}</p>
+        <div className='about-gallery'>
+          <h2 className='page-title'>{about[0].title.rendered}</h2>
+          <img className='gallery-image' src={about[0].acf['image-aboutpage'].url} alt={about[0].acf['image-aboutpage'].title} />
+          <p className='about-description'>{about[0].acf.about_description}</p>
+        </div>
 
         <h2 id='store-info-title' className='page-title'>{about[0].acf['second-title']}</h2>
         <AllStoreInfo />

@@ -816,4 +816,51 @@
     }
 
 
+    // About
+    #about-page {
+        margin-bottom: 20px;
+
+        .about-gallery {
+            position: relative;
+         
+            .gallery-image {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 45%;
+                height: 450px;
+                margin: 20px 0px 0px;
+            }
+
+            .about-description {
+                font-size: 24px;
+                line-height: 35px;
+                margin-bottom: 100px;
+                margin-top: 50px;
+                width: 50%;
+            }
+        }
+
+        #store-info-title {
+            margin-bottom: 60px;
+            padding-top: 60px;
+        }
+
+        .store-information {
+            h4 {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 24px;
+                line-height: 36px;
+                margin-bottom: 40px;
+                width: 65%;
+            }
+        }
+
+    }
+
+
 } // end of media query

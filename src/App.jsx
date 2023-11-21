@@ -6,10 +6,22 @@ import { ArtworkProvider } from './context/ArtworkContext'
 import { useEffect } from 'react'
 import useCustomiser from './hooks/useCustomiser'
 import './css/App.css'
+import Lenis from '@studio-freight/lenis'
 
 function App() {
   const { font, bgColor } = useCustomiser()
-  console.log(bgColor);
+  const lenis = new Lenis()
+
+  lenis.on('scroll', (e) => {
+    console.log(e)
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
 
   useEffect(() => {
     if (font === 'Work Sans') {
