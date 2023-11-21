@@ -1,0 +1,1069 @@
+:root {
+    --bg-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+body.no-scroll {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+}
+
+// Header
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    background-color: $off-black;
+    padding: 20px 30px;
+
+    #topnav {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+
+        #logo img {
+            width: 150px;
+        }
+    }
+
+    .desktop-menu {
+        display: flex;
+        #menu {
+            display: none;
+        }
+
+        #exhibition,
+        #shop {
+            position: relative;
+            color: $off-white;
+            cursor: pointer;
+            
+            &.active .menu-option-list{
+                display: block;  
+            }
+            
+        }
+
+        .menu-option-list{
+            position: absolute;
+            background-color: $off-black;
+            color: $off-white;
+            list-style: none;
+            padding: 15px 0px 10px;
+            margin-top: 5px;
+            display: none;
+            border-radius: 5px;
+            li {
+                margin-bottom: 13px;
+            }
+
+        }
+
+        #search-icon svg{
+            font-size: 30px;
+            color: $off-white;
+        }
+    }
+
+    #mobile-menu-button-container {
+        #mobile-menu-button {
+            border: none;
+            background: none;
+            #hamburger-icon {
+                font-size: 30px;
+                color: $off-white;
+                cursor: pointer;
+            }
+        }
+    }
+     
+}
+
+// Mobile menu
+.mobile-menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $off-white;
+    color: $off-black;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+
+    #close-nav-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: none;
+        background: none;
+        font-size: 30px;
+    }
+
+    #mobile-menu {
+        margin: 70px 80px;
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: 1px;
+
+        a {
+            color: $off-black;
+        }
+
+        li {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .top-level-menu span {
+            display: inline-flex;
+            align-items: center;
+            svg {
+                margin-left: 5px;
+            }
+        }
+
+        .menu-option-list {
+            margin: 10px 0px;
+            li {
+                margin: 15px 30px;
+            }
+        }
+    }
+
+}
+
+// Repeat section style
+.section-title {
+    padding: 60px 0px 50px;
+    font-size: 18px;
+    border-top: 1px solid $off-black;
+}
+
+.view-btn {
+    background: none;
+    border: none;
+    color: $khaki-black;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
+
+    svg {
+        margin-left: 25px;
+    }
+}
+
+.section-option {
+    margin-bottom: 60px;
+    .image-box {
+        width: 100%;
+        height: 400px;
+        background-color: $light-gray;
+        padding: 20px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h4 {
+        font-family: 'Shippori Mincho B1', serif;
+        padding: 20px 0px;
+        font-size: 24px;
+        font-weight: 300; 
+    }
+}
+
+.page-style {
+    padding: 50px 30px;
+    color: $off-black;
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        
+        svg {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .back-btn {
+            border: none;
+            background: none;
+            font-size: 14px;
+            color: $khaki-black;
+            cursor: pointer;
+        }
+    }
+    
+
+    .page-title {
+        font-size: 30px;
+        font-weight: 200;
+        font-family: 'Shippori Mincho B1', serif;
+    }
+    .page-subtitle {
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 15px;
+    }
+    .page-description {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 26px;
+        margin: 15px 0px 50px;
+    }
+}
+
+.button-style {
+    display: flex;
+    justify-content: center;
+
+    button {
+        padding: 15px 70px;
+        color: $off-white;
+        border: none;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }   
+    
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: $off-black !important;
+}
+
+input:focus {
+    outline: none;
+}
+
+// Swiper style
+.swiper-button-prev:after,
+.swiper-button-next:after
+ {
+    color: rgb(210, 208, 208);
+}
+
+.swiper-pagination-progressbar {
+    border: 1px solid $off-black;
+    background-color: $off-white;
+    padding: 2px;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: $off-black;
+}
+
+
+// Home page
+#home {
+    color: $off-black;
+    .hero {
+        padding-inline: 30px;
+        margin: 60px 0px;
+        .hero-text-area {
+            .title {
+                text-transform: uppercase;                
+                font-weight: 400;
+                font-size: 18px;
+            }
+            .artist-name {
+                font-family: 'Shippori Mincho B1', serif;
+                font-size: 40px;
+                padding: 20px 0px;
+                width: 215px;
+                border-bottom: 1px solid $off-black;
+            }
+            .period {
+                color: $khaki-black;
+                padding: 30px 0px;
+                font-size: 16px;
+            }
+        }
+
+        .hero-image-area {
+            margin-bottom: 40px;
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+
+    .new-art {
+       padding: 0px 30px 60px;
+      
+        .arts {
+            font-family: 'Shippori Mincho B1', serif;
+            img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+            h4 {
+                padding-top: 10px;
+                font-size: 24px;
+                font-weight: 300;
+            }
+            p {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            button {
+                margin-bottom: 30px;
+            }
+        }   
+    }
+
+    .featured {
+        padding-inline: 30px;
+    }
+
+    .about {
+        color: $off-white;
+        background-color: $off-black;
+        padding: 10px 30px 80px;
+
+        .about-texts {
+            .section-title {
+                border-bottom: 1px solid $off-white;
+                border-top: none;
+            }
+    
+            .about-description {
+                font-size: 19px;
+                font-weight: 300;
+                margin: 50px 0px 60px;
+                line-height: 28px;
+    
+                p {
+                    margin: 20px 0px;
+                }
+            }
+    
+            .view-btn {
+                color: $off-white;
+            }
+        }
+
+        .about-image {
+            display: none;
+        }
+    }
+
+    .subscribe {
+        padding: 10px 30px 80px;
+        background-color: $light-gray;
+        .section-title {
+            border: none;
+        }
+        h4 {
+            font-size: 27px;
+            font-weight: 400;
+            padding-bottom: 50px;
+            border-bottom: 1px solid $off-black;
+        }
+
+        .view-btn {
+            margin-top: 50px;
+        }
+    }
+
+    .testimonials {
+        padding: 10px 30px 60px;
+        .section-title {
+            border: none;
+        }
+        .testimonial {
+            padding-inline: 60px;
+           
+            h4 {
+                font-family: 'Shippori Mincho B1', serif;
+                font-weight: 400;
+                font-size: 23px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+            }
+    
+            h5 {
+                font-weight: 300;
+                font-size: 20px;
+                margin-top: 30px;
+                text-align: center;
+            }
+        }
+       
+    }
+
+}// end of home
+
+
+//Footer
+footer {
+    background-color: $off-black;
+    color: $off-white;
+    padding: 50px 30px 40px;
+
+    .footer-subscribe {
+        padding-bottom: 50px;
+        border-bottom: 1px solid $off-white;
+        h4{
+            font-family: 'Shippori Mincho B1', serif;
+            font-size: 24px;
+            font-weight: 100;
+        }  
+
+        .input-container {
+            border: 1px solid $off-white;
+            margin-top: 30px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                background: none;
+                border: none;
+                font-size: 16px;
+                color: $off-white;
+                width: 100%;
+                padding: 5px;
+
+                &::placeholder {
+                    color: $off-white;
+                }
+            }
+
+            svg {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .footer-info-section {
+        margin: 50px 0px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 200;
+        position: relative;
+
+        .info-box {
+            .info-title {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            ul {
+                list-style: none;
+                margin-bottom: 50px;
+                font-size: 16px;
+            }
+        }
+
+        .social {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    .back-to-top {
+        display: none;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid $off-white;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 100;
+    }
+}
+
+// Current Exhibition page
+#current-exhibition {
+    margin-bottom: 30px;
+    .current-text-area {
+        padding: 50px 0px 40px;
+        .title {
+            font-size: 18px;
+            font-weight: 400;
+            color: $khaki-black;
+            text-transform: uppercase;
+        }
+
+        .artist-name {
+            font-family: 'Shippori Mincho B1', serif;
+            font-size: 30px;
+            margin: 20px 0px;
+        }
+
+        .period {
+            color: $khaki-black;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .description {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28px;
+        }
+    }
+
+    .current-image-area {
+        img {
+            height: 500px;
+            width:  100%;
+            object-fit: cover;
+        }
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}
+
+// Past Exhbition
+#past-exhibition {
+    margin-bottom: 30px;
+    .past-exhibition-display {
+        img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        h4 {
+            font-family: 'Shippori Mincho B1', serif;
+            font-size: 26px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        h5 {
+            font-family: 'Shippori Mincho B1', serif;
+            font-size: 20px;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .past-exhibition-description {
+            font-size: 18px;
+            line-height: 26px;
+            margin-top: 30px;
+        }
+    }
+}
+
+// Artists page
+#artists-page {
+    h2 {
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid $off-black;
+    }
+
+    .artists-list {
+        margin-bottom: 40px;
+        a {
+            color: $off-black;
+        }
+        img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+        }
+
+        h5 {
+            font-size: 20px;
+            font-family: 'Shippori Mincho B1', serif;
+            text-align: center;
+        }
+    }
+}
+
+
+// Single Artist page
+#single-artist-page {
+
+    .page-description {
+        display: none;
+    }
+    
+    .artist-main-img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        margin: 50px 0px 60px;
+    }
+
+    .artist-menu {
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $khaki-black;
+        button {
+            background: none;
+            font-size: 16px;
+            border: none;
+            color: $khaki-black; 
+        }   
+    }
+
+    .artist-works {
+        margin: 50px 0px;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .artwork {
+            margin-bottom: 30px;
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.artist-biography {
+    background-color: $light-gray;
+    padding: 50px 30px;
+
+    h4 {
+        font-size: 18px;
+        font-weight: 400;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $khaki-black;
+        width:150px;
+    }
+
+    .biography-body {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 30px;
+    }
+}
+
+
+// Single Artwork page
+#artwork-page {
+    margin-bottom: 40px;
+    .artwork-image {
+        margin: 30px 0px 20px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .artwork-description {
+        font-size: 18px;
+        color: $khaki-black;
+        margin-bottom: 10px;
+    }
+
+    .artwork-price {
+        font-size: 18px;
+        color: $khaki-black;
+        font-weight: 400;
+        margin-bottom: 60px;
+    }
+    
+}
+
+// Prints
+#prints-page {
+
+    .page-title {
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid $off-black;
+    }
+
+    a {
+        color: $off-black;
+    }
+   
+    .prints-list {
+        margin-bottom: 50px;
+
+        img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+        }
+
+        h5 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .print-artist {
+            font-size: 17px;
+            display: flex;
+            p {
+                margin-left: 3px;
+            }
+        }
+
+    }
+}
+
+// Single print
+#single-print-page {
+    margin-bottom: 40px;
+
+    .page-title {
+        margin-bottom: 5px;
+    }
+    .print-artist {
+        display: flex;
+        margin-bottom: 30px;
+        font-weight: 300;
+        font-size: 20px;
+        p {
+            font-weight: 300;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+    }
+    .print-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .print-description {
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 30px;
+        line-height: 24px;
+    }
+
+    .print-price {
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+}
+
+// Commissions
+#commissions-page {
+    margin-bottom: 50px;
+
+    .page-title {
+        margin-bottom: 50px;
+    }
+
+    .commission-option {
+        margin-bottom: 30px;
+        h3 {
+            font-size: 23px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 30px;
+            font-weight: 300;
+            white-space: pre-line;
+        }
+        
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+
+      .artists-toggle-btn {
+        border: none;
+        background: none;
+        font-size: 17px;
+        font-weight: 600;
+        padding-top: 2px;
+        }
+    
+        svg {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+    }
+
+    .artists-list-container{
+        margin-bottom: 50px;
+        .available-artists {
+            h4 {
+                font-size: 19px;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+    
+            p {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+
+    .mySwiper {
+        margin-bottom: 70px;
+    }
+
+    .painting-option {
+        
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+    
+}
+
+
+// About
+#about-page {
+    margin-bottom: 20px;
+    img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        margin: 30px 0px;
+    }
+
+    .about-description {
+        font-size: 19px;
+        line-height: 27px;
+        font-weight: 300;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid $off-black;
+        white-space: pre-line;
+    }
+
+    #store-info-title {
+        margin-bottom: 40px;
+    }
+
+    .store-information {
+        h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 27px;
+            margin-bottom: 30px;
+            white-space: pre-line;
+        }
+    }
+
+}
+
+// Gifting
+#voucher-page {
+    margin-bottom: 60px;
+
+    .page-subtitle {
+        font-size: 23px;
+        font-weight: 300;
+    }
+
+    .voucher-image {
+        margin: 50px 0px;
+    }
+
+    .select-box {
+        
+        .select-label {
+            font-size: 18px;
+            color: $khaki-black;
+            margin-bottom: 20px;
+        }
+
+        .select-value {
+            font-size: 20px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            border-bottom: 1px solid $khaki-black;
+            cursor: pointer;
+        }
+
+        .option-container {
+            position: relative;
+
+            .price-lists {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 999999999;
+                background: $off-white;
+                width: 100%;
+                .list-option {
+                  font-size: 20px;
+                  margin: 20px 30px; 
+                  color: $khaki-black;
+                  font-weight: 300;
+                  cursor: pointer;
+                }
+            }
+        } 
+    }
+
+    .button-style {
+        margin-top: 60px;
+    }
+}
+
+// Contact
+#contact-page {
+    
+    .page-title {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $off-black;
+        width: 200px;
+    }
+
+    .contact-info {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 50px;
+        p {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.contact-form {
+    margin-bottom: 30px;
+    position: relative;
+
+    .label-input {
+        border-bottom: 1px solid $off-black;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        color: $khaki-black;
+        
+        input,
+        textarea {
+            border: none;
+            margin-left: 10px;
+            font-size: 18px;
+            font-family: 'Work Sans', sans-serif;
+            color: $off-black;
+            background-color: transparent;
+            
+        }
+        input {
+            height: 30px;
+        }
+        
+
+        textarea {
+            width: 100%;
+        }
+    }
+
+    button {
+        margin-top: 50px;
+    }
+    
+    .status-message {
+        position: absolute;
+        bottom: 200px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.702);
+        color: $off-white;
+        font-size: 20px;
+        padding: 20px;
+    }
+    
+}
+
+// Enquire form
+#enquire {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $off-white;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    
+    .page-title {
+        margin-bottom: 50px;
+    }
+
+    .enquire-artwork {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .artwork-info {
+            margin-left: 10px;
+            h3 {
+                font-weight: 500;
+                font-size: 19px;
+            }
+            p {
+                font-size: 18px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    #enquire-form {
+        .close-btn {
+            position: absolute;
+            top: -80px;
+            right: 0;
+            font-size: 25px;
+        }
+
+        .button-style button{
+            margin-top: 30px;
+        }
+
+    }
+    
+}

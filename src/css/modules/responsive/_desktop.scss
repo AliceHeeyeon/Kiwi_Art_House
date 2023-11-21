@@ -1,0 +1,819 @@
+@media screen and (min-width: 992px) {
+
+    nav {
+        padding: 40px 70px;
+    
+        #topnav {
+            top: 20px;
+            left: 70px;
+
+            #logo img {
+                width: 200px;
+                margin-top: 5px;
+            }
+        }
+    
+        .desktop-menu {
+            #menu {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                list-style: none;
+               
+                li {
+                    padding-inline: 30px;
+                    font-size: 20px;
+                    font-weight: 300;
+                    a {
+                        color: $off-white;
+                    }
+                }
+            }
+    
+        }
+    
+        #mobile-menu-button-container {
+            display: none;
+        }
+        
+    }
+
+    // Home 
+    #home {
+        .hero {
+            position: relative;
+            padding-inline: 70px;
+            margin: 100px 0px 30px 0px;
+            display: flex;
+            justify-content: space-between;
+            height: 78vh;
+            .hero-text-area {
+                width: 400px;
+                padding-top: 40px;
+                .title {
+                    font-size: 23px;
+                }
+                .artist-name {
+                    font-size: 57px;
+                    padding: 40px 0px;
+                    width: 300px;
+                    border-bottom: 1px solid $off-black;
+                }
+                .period {
+                    color: $khaki-black;
+                    padding: 45px 0px;
+                    font-size: 23px;
+                }
+            }
+    
+            .hero-image-area {
+                width: 70%;
+                img {
+                    width: 100%;
+                    height: 612px;
+                    object-fit: cover;
+                }
+            }
+
+            #view-exhibition {
+                position: absolute;
+                left: 70px;
+                bottom: 150px;
+            }
+    
+        }
+    
+        .new-art {
+           padding: 0px 70px 80px;
+            .arts {
+                img {
+                    height: 450px;
+                    object-fit: cover;
+                }
+                h4 {
+                    padding-top: 10px;
+                    font-size: 27px;
+                    font-weight: 300;
+                }
+                p {
+                    font-size: 23px;
+                    margin-bottom: 25px;
+                }
+    
+                button {
+                    margin-bottom: 30px;
+                }
+            }   
+        }
+    
+        .featured {
+            padding-inline: 70px;
+            margin-bottom: 20px;
+            .option-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 30px;
+            }
+        }
+    
+        .about {
+            padding: 0px 70px 0px;
+            display: flex;
+            .about-texts {
+                flex: 0.81;
+                padding-bottom: 110px;
+                .about-description {
+                    font-size: 23px;
+                    line-height: 40px;
+                }
+            }
+    
+            .about-image {
+                display: block;
+                flex: 1;
+                position: relative;
+                img {
+                    position: absolute;
+                    right: -70px;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+        }
+    
+        .subscribe {
+            padding: 80px 70px;
+            display: flex;
+            
+            .subscribe-text-area {
+                border-right: 1px solid $khaki-black;
+                flex: 1;
+                .section-title {
+                    border: none;
+                    padding-top: 0;
+                }
+                h4 {
+                    font-size: 28px;
+                    border-bottom: none;
+                    margin-right: 20px;
+                    line-height: 40px;
+                }
+                
+            }
+
+            .signup-btn {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0.5;
+                height: auto;
+                .view-btn {
+                    margin-top: 0px;
+                }
+            }
+           
+            
+        }
+    
+        .testimonials {
+            padding: 10px 70px 110px;
+        
+            .testimonial {
+               
+                h4 {
+                    font-size: 28px;
+                    padding-inline: 60px;
+                }
+        
+                h5 {     
+                    font-size: 24px;
+                }
+            }
+           
+        }
+    
+    }// end of home
+
+
+    // Repeat section style
+    .section-title {
+        padding: 80px 0px 70px;
+        font-size: 24px;
+    }
+
+    .view-btn {
+        font-size: 20px;
+    }
+
+    .section-option {
+        margin-bottom: 100px;
+        width: 100%;
+
+        .image-box {
+            height: 450px;
+        }
+
+        h4 {
+            font-size: 27px;
+        }
+    }
+
+    .page-style {
+        padding: 50px 70px;
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            
+            svg {
+                margin-right: 10px;
+                font-size: 22px;
+            }
+
+            .back-btn {
+                border: none;
+                background: none;
+                font-size: 19px;
+                color: $khaki-black;
+                cursor: pointer;
+            }
+        }
+
+        .page-title {
+            font-size: 45px;
+        }
+        .page-subtitle {
+            font-size: 26px;
+        }
+        .page-description {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 40px;
+            margin: 30px 0px 50px;
+        }
+    }
+
+    .button-style {
+        button {
+            padding: 20px 70px;
+            font-size: 18px;
+        }   
+        
+    }
+
+
+    //Footer
+    footer {
+        padding: 70px 70px 110px;
+        display: grid;
+        grid-template-columns: 400px 1fr 140px;
+        gap: 90px;
+        position: relative;
+
+        .footer-subscribe {
+            border-bottom: none;
+            padding-right: 30px;
+            h4{
+                font-size: 28px;
+            }  
+
+        }
+
+        .footer-info-section {
+            margin: 0px;
+            position: static;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+            .info-box {
+               margin-left: 30px;
+                .info-title {
+                    font-size: 20px;
+                }
+
+                ul {
+                    font-size: 20px;
+                    li {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            .social {
+                left: 70px;
+                bottom: 140px;
+                font-size: 20px;
+                font-weight: 300;
+            }
+        }
+
+        .back-to-top {
+            display: flex;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+        }
+
+        .copyright {
+            font-size: 16px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding-bottom: 30px;
+        }
+    }
+
+    // Current Exhibition page
+    #current-exhibition {
+        .current-text-area {
+            padding: 50px 0px 60px;
+            .title {
+                font-size: 23px;
+            }
+
+            .artist-name {
+                font-size: 45px;
+                margin: 28px 0px 40px;
+            }
+
+            .period {
+                margin-bottom: 50px;
+                font-size: 23px;
+            }
+
+            .description {
+                font-size: 24px;
+                line-height: 43px;
+                width: 65%;
+            }
+        }
+
+        .current-image-area {
+            img {
+                height: 800px;
+            }
+            p {
+                margin-top: 20px;
+                font-size: 23px;
+            }
+        }
+    }
+
+
+    // Past Exhbition
+    #past-exhibition {
+        margin-bottom: 60px;
+
+        .page-description {
+            width: 65%;
+        }
+        .past-exhibition-display {
+            img {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+            }
+            h4 {
+                font-size: 30px;
+                margin-top: 15px;
+            }
+            h5 {
+                font-size: 25px;
+            }
+            p {
+                font-size: 21px;
+                margin-top: 20px;
+            }
+            .past-exhibition-description {
+                font-size: 23px;
+                line-height: 35px;
+                margin-top: 30px;
+                
+            }
+        }
+    }
+
+
+    // Artists page
+    #artists-page {
+        margin-bottom: 20px;
+
+        h2 {
+            padding-bottom: 40px;
+            margin-bottom: 60px;
+        }
+
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+
+            .artists-list {
+        
+                img {
+                    height: 400px;
+                }
+    
+                h5 {
+                    font-size: 26px;
+                    margin-top: 5px;
+                }
+            }
+        }
+        
+    }
+
+
+    // Single Artist page
+    #single-artist-page {
+
+        .top-artist-page {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 80px 0px 110px;
+            .text-area {
+                width: 55%;
+                .page-description {
+                    display: block;
+                }
+            }
+            
+            .artist-main-img {
+                width: 500px;
+                height: 400px;
+                margin: 0px;
+            }
+        }
+
+     
+        .artist-menu {
+            padding-bottom: 50px;
+            button {
+                font-size: 20px;
+            }   
+        }
+
+        .artist-works {
+            margin: 80px 0px;
+
+            h4 {
+                font-size: 24px;
+            }
+
+            .artist-works-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+
+            .artwork {
+                img {
+                    height: 350px;
+                }
+
+                p {
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+
+    .artist-biography {
+        padding: 70px 70px;
+
+        h4 {
+            font-size: 24px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            width: 200px;
+        }
+
+        .biography-body {
+            font-size: 23px;
+            line-height: 41px;
+        }
+    }
+
+    // Single Artwork page
+    #artwork-page {
+        margin-top: 30px;
+        margin-bottom: 80px;
+        position: relative;
+
+        .artwork-image {
+            margin: 30px 0px 20px;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            right: 70px;
+        }
+
+        .artwork-description {
+            font-size: 24px;
+            color: $khaki-black;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        .artwork-price {
+            font-size: 24px;
+            color: $khaki-black;
+            font-weight: 400;
+            margin-bottom: 100px;
+        }
+        
+        #artwork-enquire-btn {
+            justify-content: left;
+        }
+    }
+
+    // Enquire form
+    #filter-bg {
+        position: absolute;
+        top: -135px;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        background-color: rgba(27, 27, 27, 0.828);
+    }
+
+    #enquire {
+        top: -135px;
+        width: 60%;
+        
+        .page-title {
+            margin-bottom: 60px;
+        }
+
+        .enquire-artwork {
+            margin-top: 30px;
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .artwork-info {
+                margin-left: 20px;
+                h3 {
+                    font-size: 22px;
+                }
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        #enquire-form {
+            .close-btn {
+                top: -100px;
+                font-size: 30px;
+            }
+
+            .button-style button{
+                margin-top: 50px;
+            }
+
+        }
+        
+    }
+
+
+    // Contact
+    #contact-page {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .contact-texts {
+            margin-top: 30px;
+
+            .page-title {
+                width: 300px;
+            }
+    
+            .contact-info {
+                font-size: 24px;
+            }
+        }
+       
+    }
+
+    .contact-form {
+        margin-bottom: 30px;
+        position: relative;
+
+        .label-input {
+            padding-bottom: 15px;
+            margin-top: 40px;
+            font-size: 20px;
+            
+            input,
+            textarea {
+                margin-left: 10px;
+                font-size: 20px;   
+            }
+    
+        }
+
+        button {
+            margin-top: 50px;
+        }
+        
+        .status-message {
+            position: absolute;
+            bottom: 200px;
+            left: 0;
+            font-size: 24px;
+            padding: 30px;
+        }
+        
+    }
+
+    // Prints
+    #prints-page {
+
+        .page-title {
+            padding-bottom: 40px;
+            margin-bottom: 60px;
+        }
+
+    
+        .prints-grid-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .prints-list {
+
+            h5 {
+                font-size: 25px;
+            }
+
+            .print-artist {
+                font-size: 20px;
+            }
+
+        }
+    }
+
+    // Single print
+    #single-print-page {
+        margin-bottom: 80px;
+
+        .page-title {
+            margin-bottom: 5px;
+        }
+        .print-artist {
+            display: flex;
+            margin-bottom: 30px;
+            font-weight: 300;
+            font-size: 26px;
+            p {
+                font-weight: 300;
+                font-size: 26px;
+                margin-left: 10px;
+            }
+        }
+        .print-image {
+            margin-top: 40px;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 150px;
+            right: 70px;
+        }
+
+        .print-description {
+            font-size: 23px;
+            margin-top: 50px;
+            line-height: 35px;
+        }
+
+        .print-price {
+            font-size: 25px;
+            margin-top: 30px;
+            margin-bottom: 70px;
+        }
+
+        #print-purchase-btn {
+            justify-content: left;
+        }
+    }
+
+
+    // Commissions
+    #commissions-page {
+        margin-bottom: 50px;
+
+        .commission-option {
+            margin-bottom: 60px;
+            h3 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 24px;
+                line-height: 41px;
+                width: 70%;
+            }
+            
+        }
+
+        .button-container {
+            margin: 50px 0px;
+
+        .artists-toggle-btn { 
+            font-size: 20px;
+            }
+        
+            svg {
+                font-size: 23px;
+                margin-left: 8px;
+            }
+        }
+
+        .artists-list-container{
+            .available-artists {
+                h4 {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+        
+                p {
+                    font-size: 22px;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+        
+
+        .mySwiper {
+            margin-bottom: 80px;
+        }
+
+        .painting-option {
+            margin-top: 30px
+            img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+        }
+
+        #commission-enquire-btn button{
+            padding: 20px 100px;
+        }
+        
+    }
+
+
+    // Gifting
+    #voucher-page {
+        margin-bottom: 60px;
+
+        .page-contents {
+            position: relative;
+        }
+
+        .page-subtitle {
+            font-size: 30px;
+            margin-bottom: 100px;
+        }
+
+        .voucher-image {
+            margin: 0px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            margin-top: 20px;
+        }
+
+        .select-box {
+            width: 400px;
+            .select-label {
+                font-size: 20px;
+            }
+        }
+
+        #voucher-purchase-btn {
+            margin-top: 80px;
+            justify-content: left;
+        }
+    }
+
+
+} // end of media query

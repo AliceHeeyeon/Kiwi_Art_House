@@ -1,0 +1,1552 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+:root {
+  --bg-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+body.no-scroll {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  background-color: #262626;
+  padding: 20px 30px;
+}
+nav #topnav {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+nav #topnav #logo img {
+  width: 150px;
+}
+nav .desktop-menu {
+  display: flex;
+}
+nav .desktop-menu #menu {
+  display: none;
+}
+nav .desktop-menu #exhibition,
+nav .desktop-menu #shop {
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+nav .desktop-menu #exhibition.active .menu-option-list,
+nav .desktop-menu #shop.active .menu-option-list {
+  display: block;
+}
+nav .desktop-menu .menu-option-list {
+  position: absolute;
+  background-color: #262626;
+  color: white;
+  list-style: none;
+  padding: 15px 0px 10px;
+  margin-top: 5px;
+  display: none;
+  border-radius: 5px;
+}
+nav .desktop-menu .menu-option-list li {
+  margin-bottom: 13px;
+}
+nav .desktop-menu #search-icon svg {
+  font-size: 30px;
+  color: white;
+}
+nav #mobile-menu-button-container #mobile-menu-button {
+  border: none;
+  background: none;
+}
+nav #mobile-menu-button-container #mobile-menu-button #hamburger-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.mobile-menu-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  color: #262626;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+}
+.mobile-menu-container #close-nav-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 30px;
+}
+.mobile-menu-container #mobile-menu {
+  margin: 70px 80px;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.mobile-menu-container #mobile-menu a {
+  color: #262626;
+}
+.mobile-menu-container #mobile-menu li {
+  list-style: none;
+  margin-bottom: 35px;
+}
+.mobile-menu-container #mobile-menu .top-level-menu span {
+  display: inline-flex;
+  align-items: center;
+}
+.mobile-menu-container #mobile-menu .top-level-menu span svg {
+  margin-left: 5px;
+}
+.mobile-menu-container #mobile-menu .menu-option-list {
+  margin: 10px 0px;
+}
+.mobile-menu-container #mobile-menu .menu-option-list li {
+  margin: 15px 30px;
+}
+
+.section-title {
+  padding: 60px 0px 50px;
+  font-size: 18px;
+  border-top: 1px solid #262626;
+}
+
+.view-btn {
+  background: none;
+  border: none;
+  color: #646868;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+.view-btn svg {
+  margin-left: 25px;
+}
+
+.section-option {
+  margin-bottom: 60px;
+}
+.section-option .image-box {
+  width: 100%;
+  height: 400px;
+  background-color: #F0EFEF;
+  padding: 20px;
+}
+.section-option .image-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section-option h4 {
+  font-family: "Shippori Mincho B1", serif;
+  padding: 20px 0px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.page-style {
+  padding: 50px 30px;
+  color: #262626;
+}
+.page-style .button-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.page-style .button-container svg {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.page-style .button-container .back-btn {
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #646868;
+  cursor: pointer;
+}
+.page-style .page-title {
+  font-size: 30px;
+  font-weight: 200;
+  font-family: "Shippori Mincho B1", serif;
+}
+.page-style .page-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+.page-style .page-description {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+  margin: 15px 0px 50px;
+}
+
+.button-style {
+  display: flex;
+  justify-content: center;
+}
+.button-style button {
+  padding: 15px 70px;
+  color: white;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: #262626 !important;
+}
+
+input:focus {
+  outline: none;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: rgb(210, 208, 208);
+}
+
+.swiper-pagination-progressbar {
+  border: 1px solid #262626;
+  background-color: white;
+  padding: 2px;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #262626;
+}
+
+#home {
+  color: #262626;
+}
+#home .hero {
+  padding-inline: 30px;
+  margin: 60px 0px;
+}
+#home .hero .hero-text-area .title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+}
+#home .hero .hero-text-area .artist-name {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 40px;
+  padding: 20px 0px;
+  width: 215px;
+  border-bottom: 1px solid #262626;
+}
+#home .hero .hero-text-area .period {
+  color: #646868;
+  padding: 30px 0px;
+  font-size: 16px;
+}
+#home .hero .hero-image-area {
+  margin-bottom: 40px;
+}
+#home .hero .hero-image-area img {
+  width: 100%;
+}
+#home .new-art {
+  padding: 0px 30px 60px;
+}
+#home .new-art .arts {
+  font-family: "Shippori Mincho B1", serif;
+}
+#home .new-art .arts img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#home .new-art .arts h4 {
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: 300;
+}
+#home .new-art .arts p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+#home .new-art .arts button {
+  margin-bottom: 30px;
+}
+#home .featured {
+  padding-inline: 30px;
+}
+#home .about {
+  color: white;
+  background-color: #262626;
+  padding: 10px 30px 80px;
+}
+#home .about .about-texts .section-title {
+  border-bottom: 1px solid white;
+  border-top: none;
+}
+#home .about .about-texts .about-description {
+  font-size: 19px;
+  font-weight: 300;
+  margin: 50px 0px 60px;
+  line-height: 28px;
+}
+#home .about .about-texts .about-description p {
+  margin: 20px 0px;
+}
+#home .about .about-texts .view-btn {
+  color: white;
+}
+#home .about .about-image {
+  display: none;
+}
+#home .subscribe {
+  padding: 10px 30px 80px;
+  background-color: #F0EFEF;
+}
+#home .subscribe .section-title {
+  border: none;
+}
+#home .subscribe h4 {
+  font-size: 27px;
+  font-weight: 400;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #262626;
+}
+#home .subscribe .view-btn {
+  margin-top: 50px;
+}
+#home .testimonials {
+  padding: 10px 30px 60px;
+}
+#home .testimonials .section-title {
+  border: none;
+}
+#home .testimonials .testimonial {
+  padding-inline: 60px;
+}
+#home .testimonials .testimonial h4 {
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 400;
+  font-size: 23px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+#home .testimonials .testimonial h5 {
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer {
+  background-color: #262626;
+  color: white;
+  padding: 50px 30px 40px;
+}
+footer .footer-subscribe {
+  padding-bottom: 50px;
+  border-bottom: 1px solid white;
+}
+footer .footer-subscribe h4 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 24px;
+  font-weight: 100;
+}
+footer .footer-subscribe .input-container {
+  border: 1px solid white;
+  margin-top: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer-subscribe .input-container input {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  padding: 5px;
+}
+footer .footer-subscribe .input-container input::-moz-placeholder {
+  color: white;
+}
+footer .footer-subscribe .input-container input::placeholder {
+  color: white;
+}
+footer .footer-subscribe .input-container svg {
+  font-size: 20px;
+}
+footer .footer-info-section {
+  margin: 50px 0px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 200;
+  position: relative;
+}
+footer .footer-info-section .info-box .info-title {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+footer .footer-info-section .info-box ul {
+  list-style: none;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+footer .footer-info-section .social {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+footer .back-to-top {
+  display: none;
+}
+footer .copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid white;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+#current-exhibition {
+  margin-bottom: 30px;
+}
+#current-exhibition .current-text-area {
+  padding: 50px 0px 40px;
+}
+#current-exhibition .current-text-area .title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #646868;
+  text-transform: uppercase;
+}
+#current-exhibition .current-text-area .artist-name {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 30px;
+  margin: 20px 0px;
+}
+#current-exhibition .current-text-area .period {
+  color: #646868;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+#current-exhibition .current-text-area .description {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+}
+#current-exhibition .current-image-area img {
+  height: 500px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#current-exhibition .current-image-area p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#past-exhibition {
+  margin-bottom: 30px;
+}
+#past-exhibition .past-exhibition-display img {
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#past-exhibition .past-exhibition-display h4 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 26px;
+  margin-top: 10px;
+  text-align: center;
+}
+#past-exhibition .past-exhibition-display h5 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
+  text-align: center;
+}
+#past-exhibition .past-exhibition-display p {
+  font-size: 16px;
+  margin-top: 15px;
+  text-align: center;
+}
+#past-exhibition .past-exhibition-display .past-exhibition-description {
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 30px;
+}
+
+#artists-page h2 {
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #262626;
+}
+#artists-page .artists-list {
+  margin-bottom: 40px;
+}
+#artists-page .artists-list a {
+  color: #262626;
+}
+#artists-page .artists-list img {
+  width: 100%;
+  height: 330px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#artists-page .artists-list h5 {
+  font-size: 20px;
+  font-family: "Shippori Mincho B1", serif;
+  text-align: center;
+}
+
+#single-artist-page .page-description {
+  display: none;
+}
+#single-artist-page .artist-main-img {
+  width: 100%;
+  height: 230px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 50px 0px 60px;
+}
+#single-artist-page .artist-menu {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #646868;
+}
+#single-artist-page .artist-menu button {
+  background: none;
+  font-size: 16px;
+  border: none;
+  color: #646868;
+}
+#single-artist-page .artist-works {
+  margin: 50px 0px;
+}
+#single-artist-page .artist-works h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+#single-artist-page .artist-works .artwork {
+  margin-bottom: 30px;
+}
+#single-artist-page .artist-works .artwork img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#single-artist-page .artist-works .artwork p {
+  text-align: center;
+}
+
+.artist-biography {
+  background-color: #F0EFEF;
+  padding: 50px 30px;
+}
+.artist-biography h4 {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #646868;
+  width: 150px;
+}
+.artist-biography .biography-body {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+#artwork-page {
+  margin-bottom: 40px;
+}
+#artwork-page .artwork-image {
+  margin: 30px 0px 20px;
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#artwork-page .artwork-description {
+  font-size: 18px;
+  color: #646868;
+  margin-bottom: 10px;
+}
+#artwork-page .artwork-price {
+  font-size: 18px;
+  color: #646868;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+
+#prints-page .page-title {
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #262626;
+}
+#prints-page a {
+  color: #262626;
+}
+#prints-page .prints-list {
+  margin-bottom: 50px;
+}
+#prints-page .prints-list img {
+  width: 100%;
+  height: 330px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#prints-page .prints-list h5 {
+  font-size: 22px;
+  font-weight: 600;
+}
+#prints-page .prints-list .print-artist {
+  font-size: 17px;
+  display: flex;
+}
+#prints-page .prints-list .print-artist p {
+  margin-left: 3px;
+}
+
+#single-print-page {
+  margin-bottom: 40px;
+}
+#single-print-page .page-title {
+  margin-bottom: 5px;
+}
+#single-print-page .print-artist {
+  display: flex;
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 20px;
+}
+#single-print-page .print-artist p {
+  font-weight: 300;
+  font-size: 20px;
+  margin-left: 5px;
+}
+#single-print-page .print-image {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#single-print-page .print-description {
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 30px;
+  line-height: 24px;
+}
+#single-print-page .print-price {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+#commissions-page {
+  margin-bottom: 50px;
+}
+#commissions-page .page-title {
+  margin-bottom: 50px;
+}
+#commissions-page .commission-option {
+  margin-bottom: 30px;
+}
+#commissions-page .commission-option h3 {
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+#commissions-page .commission-option p {
+  font-size: 19px;
+  line-height: 30px;
+  font-weight: 300;
+  white-space: pre-line;
+}
+#commissions-page .button-container {
+  display: flex;
+  align-items: center;
+}
+#commissions-page .button-container .artists-toggle-btn {
+  border: none;
+  background: none;
+  font-size: 17px;
+  font-weight: 600;
+  padding-top: 2px;
+}
+#commissions-page .button-container svg {
+  font-size: 20px;
+  margin-left: 5px;
+}
+#commissions-page .artists-list-container {
+  margin-bottom: 50px;
+}
+#commissions-page .artists-list-container .available-artists h4 {
+  font-size: 19px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+#commissions-page .artists-list-container .available-artists p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+#commissions-page .mySwiper {
+  margin-bottom: 70px;
+}
+#commissions-page .painting-option img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#about-page {
+  margin-bottom: 20px;
+}
+#about-page img {
+  width: 100%;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 30px 0px;
+}
+#about-page .about-description {
+  font-size: 19px;
+  line-height: 27px;
+  font-weight: 300;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #262626;
+  white-space: pre-line;
+}
+#about-page #store-info-title {
+  margin-bottom: 40px;
+}
+#about-page .store-information h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+#about-page .store-information p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  margin-bottom: 30px;
+  white-space: pre-line;
+}
+
+#voucher-page {
+  margin-bottom: 60px;
+}
+#voucher-page .page-subtitle {
+  font-size: 23px;
+  font-weight: 300;
+}
+#voucher-page .voucher-image {
+  margin: 50px 0px;
+}
+#voucher-page .select-box .select-label {
+  font-size: 18px;
+  color: #646868;
+  margin-bottom: 20px;
+}
+#voucher-page .select-box .select-value {
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #646868;
+  cursor: pointer;
+}
+#voucher-page .select-box .option-container {
+  position: relative;
+}
+#voucher-page .select-box .option-container .price-lists {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  background: white;
+  width: 100%;
+}
+#voucher-page .select-box .option-container .price-lists .list-option {
+  font-size: 20px;
+  margin: 20px 30px;
+  color: #646868;
+  font-weight: 300;
+  cursor: pointer;
+}
+#voucher-page .button-style {
+  margin-top: 60px;
+}
+
+#contact-page .page-title {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #262626;
+  width: 200px;
+}
+#contact-page .contact-info {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+#contact-page .contact-info p {
+  margin-bottom: 5px;
+}
+
+.contact-form {
+  margin-bottom: 30px;
+  position: relative;
+}
+.contact-form .label-input {
+  border-bottom: 1px solid #262626;
+  padding-bottom: 15px;
+  margin-top: 20px;
+  color: #646868;
+}
+.contact-form .label-input input,
+.contact-form .label-input textarea {
+  border: none;
+  margin-left: 10px;
+  font-size: 18px;
+  font-family: "Work Sans", sans-serif;
+  color: #262626;
+  background-color: transparent;
+}
+.contact-form .label-input input {
+  height: 30px;
+}
+.contact-form .label-input textarea {
+  width: 100%;
+}
+.contact-form button {
+  margin-top: 50px;
+}
+.contact-form .status-message {
+  position: absolute;
+  bottom: 200px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.702);
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+}
+
+#enquire {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+}
+#enquire .page-title {
+  margin-bottom: 50px;
+}
+#enquire .enquire-artwork {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+#enquire .enquire-artwork img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#enquire .enquire-artwork .artwork-info {
+  margin-left: 10px;
+}
+#enquire .enquire-artwork .artwork-info h3 {
+  font-weight: 500;
+  font-size: 19px;
+}
+#enquire .enquire-artwork .artwork-info p {
+  font-size: 18px;
+  margin-top: 5px;
+}
+#enquire #enquire-form .close-btn {
+  position: absolute;
+  top: -80px;
+  right: 0;
+  font-size: 25px;
+}
+#enquire #enquire-form .button-style button {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 992px) {
+  nav {
+    padding: 40px 70px;
+  }
+  nav #topnav {
+    top: 20px;
+    left: 70px;
+  }
+  nav #topnav #logo img {
+    width: 200px;
+    margin-top: 5px;
+  }
+  nav .desktop-menu #menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+  }
+  nav .desktop-menu #menu li {
+    padding-inline: 30px;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  nav .desktop-menu #menu li a {
+    color: white;
+  }
+  nav #mobile-menu-button-container {
+    display: none;
+  }
+  #home .hero {
+    position: relative;
+    padding-inline: 70px;
+    margin: 100px 0px 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    height: 78vh;
+  }
+  #home .hero .hero-text-area {
+    width: 400px;
+    padding-top: 40px;
+  }
+  #home .hero .hero-text-area .title {
+    font-size: 23px;
+  }
+  #home .hero .hero-text-area .artist-name {
+    font-size: 57px;
+    padding: 40px 0px;
+    width: 300px;
+    border-bottom: 1px solid #262626;
+  }
+  #home .hero .hero-text-area .period {
+    color: #646868;
+    padding: 45px 0px;
+    font-size: 23px;
+  }
+  #home .hero .hero-image-area {
+    width: 70%;
+  }
+  #home .hero .hero-image-area img {
+    width: 100%;
+    height: 612px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #home .hero #view-exhibition {
+    position: absolute;
+    left: 70px;
+    bottom: 150px;
+  }
+  #home .new-art {
+    padding: 0px 70px 80px;
+  }
+  #home .new-art .arts img {
+    height: 450px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #home .new-art .arts h4 {
+    padding-top: 10px;
+    font-size: 27px;
+    font-weight: 300;
+  }
+  #home .new-art .arts p {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
+  #home .new-art .arts button {
+    margin-bottom: 30px;
+  }
+  #home .featured {
+    padding-inline: 70px;
+    margin-bottom: 20px;
+  }
+  #home .featured .option-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  #home .about {
+    padding: 0px 70px 0px;
+    display: flex;
+  }
+  #home .about .about-texts {
+    flex: 0.81;
+    padding-bottom: 110px;
+  }
+  #home .about .about-texts .about-description {
+    font-size: 23px;
+    line-height: 40px;
+  }
+  #home .about .about-image {
+    display: block;
+    flex: 1;
+    position: relative;
+  }
+  #home .about .about-image img {
+    position: absolute;
+    right: -70px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #home .subscribe {
+    padding: 80px 70px;
+    display: flex;
+  }
+  #home .subscribe .subscribe-text-area {
+    border-right: 1px solid #646868;
+    flex: 1;
+  }
+  #home .subscribe .subscribe-text-area .section-title {
+    border: none;
+    padding-top: 0;
+  }
+  #home .subscribe .subscribe-text-area h4 {
+    font-size: 28px;
+    border-bottom: none;
+    margin-right: 20px;
+    line-height: 40px;
+  }
+  #home .subscribe .signup-btn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0.5;
+    height: auto;
+  }
+  #home .subscribe .signup-btn .view-btn {
+    margin-top: 0px;
+  }
+  #home .testimonials {
+    padding: 10px 70px 110px;
+  }
+  #home .testimonials .testimonial h4 {
+    font-size: 28px;
+    padding-inline: 60px;
+  }
+  #home .testimonials .testimonial h5 {
+    font-size: 24px;
+  }
+  .section-title {
+    padding: 80px 0px 70px;
+    font-size: 24px;
+  }
+  .view-btn {
+    font-size: 20px;
+  }
+  .section-option {
+    margin-bottom: 100px;
+    width: 100%;
+  }
+  .section-option .image-box {
+    height: 450px;
+  }
+  .section-option h4 {
+    font-size: 27px;
+  }
+  .page-style {
+    padding: 50px 70px;
+  }
+  .page-style .button-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .page-style .button-container svg {
+    margin-right: 10px;
+    font-size: 22px;
+  }
+  .page-style .button-container .back-btn {
+    border: none;
+    background: none;
+    font-size: 19px;
+    color: #646868;
+    cursor: pointer;
+  }
+  .page-style .page-title {
+    font-size: 45px;
+  }
+  .page-style .page-subtitle {
+    font-size: 26px;
+  }
+  .page-style .page-description {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 40px;
+    margin: 30px 0px 50px;
+  }
+  .button-style button {
+    padding: 20px 70px;
+    font-size: 18px;
+  }
+  footer {
+    padding: 70px 70px 110px;
+    display: grid;
+    grid-template-columns: 400px 1fr 140px;
+    gap: 90px;
+    position: relative;
+  }
+  footer .footer-subscribe {
+    border-bottom: none;
+    padding-right: 30px;
+  }
+  footer .footer-subscribe h4 {
+    font-size: 28px;
+  }
+  footer .footer-info-section {
+    margin: 0px;
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  footer .footer-info-section .info-box {
+    margin-left: 30px;
+  }
+  footer .footer-info-section .info-box .info-title {
+    font-size: 20px;
+  }
+  footer .footer-info-section .info-box ul {
+    font-size: 20px;
+  }
+  footer .footer-info-section .info-box ul li {
+    margin-bottom: 5px;
+  }
+  footer .footer-info-section .social {
+    left: 70px;
+    bottom: 140px;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  footer .back-to-top {
+    display: flex;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+  }
+  footer .copyright {
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 30px;
+  }
+  #current-exhibition .current-text-area {
+    padding: 50px 0px 60px;
+  }
+  #current-exhibition .current-text-area .title {
+    font-size: 23px;
+  }
+  #current-exhibition .current-text-area .artist-name {
+    font-size: 45px;
+    margin: 28px 0px 40px;
+  }
+  #current-exhibition .current-text-area .period {
+    margin-bottom: 50px;
+    font-size: 23px;
+  }
+  #current-exhibition .current-text-area .description {
+    font-size: 24px;
+    line-height: 43px;
+    width: 65%;
+  }
+  #current-exhibition .current-image-area img {
+    height: 800px;
+  }
+  #current-exhibition .current-image-area p {
+    margin-top: 20px;
+    font-size: 23px;
+  }
+  #past-exhibition {
+    margin-bottom: 60px;
+  }
+  #past-exhibition .page-description {
+    width: 65%;
+  }
+  #past-exhibition .past-exhibition-display img {
+    width: 100%;
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #past-exhibition .past-exhibition-display h4 {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+  #past-exhibition .past-exhibition-display h5 {
+    font-size: 25px;
+  }
+  #past-exhibition .past-exhibition-display p {
+    font-size: 21px;
+    margin-top: 20px;
+  }
+  #past-exhibition .past-exhibition-display .past-exhibition-description {
+    font-size: 23px;
+    line-height: 35px;
+    margin-top: 30px;
+  }
+  #artists-page {
+    margin-bottom: 20px;
+  }
+  #artists-page h2 {
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+  }
+  #artists-page .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  #artists-page .artist-grid .artists-list img {
+    height: 400px;
+  }
+  #artists-page .artist-grid .artists-list h5 {
+    font-size: 26px;
+    margin-top: 5px;
+  }
+  #single-artist-page .top-artist-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 0px 110px;
+  }
+  #single-artist-page .top-artist-page .text-area {
+    width: 55%;
+  }
+  #single-artist-page .top-artist-page .text-area .page-description {
+    display: block;
+  }
+  #single-artist-page .top-artist-page .artist-main-img {
+    width: 500px;
+    height: 400px;
+    margin: 0px;
+  }
+  #single-artist-page .artist-menu {
+    padding-bottom: 50px;
+  }
+  #single-artist-page .artist-menu button {
+    font-size: 20px;
+  }
+  #single-artist-page .artist-works {
+    margin: 80px 0px;
+  }
+  #single-artist-page .artist-works h4 {
+    font-size: 24px;
+  }
+  #single-artist-page .artist-works .artist-works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  #single-artist-page .artist-works .artwork img {
+    height: 350px;
+  }
+  #single-artist-page .artist-works .artwork p {
+    font-size: 23px;
+  }
+  .artist-biography {
+    padding: 70px 70px;
+  }
+  .artist-biography h4 {
+    font-size: 24px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    width: 200px;
+  }
+  .artist-biography .biography-body {
+    font-size: 23px;
+    line-height: 41px;
+  }
+  #artwork-page {
+    margin-top: 30px;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  #artwork-page .artwork-image {
+    margin: 30px 0px 20px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    right: 70px;
+  }
+  #artwork-page .artwork-description {
+    font-size: 24px;
+    color: #646868;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+  #artwork-page .artwork-price {
+    font-size: 24px;
+    color: #646868;
+    font-weight: 400;
+    margin-bottom: 100px;
+  }
+  #artwork-page #artwork-enquire-btn {
+    justify-content: left;
+  }
+  #filter-bg {
+    position: absolute;
+    top: -135px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(27, 27, 27, 0.828);
+  }
+  #enquire {
+    top: -135px;
+    width: 60%;
+  }
+  #enquire .page-title {
+    margin-bottom: 60px;
+  }
+  #enquire .enquire-artwork {
+    margin-top: 30px;
+  }
+  #enquire .enquire-artwork img {
+    width: 100px;
+    height: 100px;
+  }
+  #enquire .enquire-artwork .artwork-info {
+    margin-left: 20px;
+  }
+  #enquire .enquire-artwork .artwork-info h3 {
+    font-size: 22px;
+  }
+  #enquire .enquire-artwork .artwork-info p {
+    font-size: 20px;
+  }
+  #enquire #enquire-form .close-btn {
+    top: -100px;
+    font-size: 30px;
+  }
+  #enquire #enquire-form .button-style button {
+    margin-top: 50px;
+  }
+  #contact-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #contact-page .contact-texts {
+    margin-top: 30px;
+  }
+  #contact-page .contact-texts .page-title {
+    width: 300px;
+  }
+  #contact-page .contact-texts .contact-info {
+    font-size: 24px;
+  }
+  .contact-form {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .contact-form .label-input {
+    padding-bottom: 15px;
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .contact-form .label-input input,
+  .contact-form .label-input textarea {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  .contact-form button {
+    margin-top: 50px;
+  }
+  .contact-form .status-message {
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    font-size: 24px;
+    padding: 30px;
+  }
+  #prints-page .page-title {
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+  }
+  #prints-page .prints-grid-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  #prints-page .prints-list h5 {
+    font-size: 25px;
+  }
+  #prints-page .prints-list .print-artist {
+    font-size: 20px;
+  }
+  #single-print-page {
+    margin-bottom: 80px;
+  }
+  #single-print-page .page-title {
+    margin-bottom: 5px;
+  }
+  #single-print-page .print-artist {
+    display: flex;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 26px;
+  }
+  #single-print-page .print-artist p {
+    font-weight: 300;
+    font-size: 26px;
+    margin-left: 10px;
+  }
+  #single-print-page .print-image {
+    margin-top: 40px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 150px;
+    right: 70px;
+  }
+  #single-print-page .print-description {
+    font-size: 23px;
+    margin-top: 50px;
+    line-height: 35px;
+  }
+  #single-print-page .print-price {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+  }
+  #single-print-page #print-purchase-btn {
+    justify-content: left;
+  }
+  #commissions-page {
+    margin-bottom: 50px;
+  }
+  #commissions-page .commission-option {
+    margin-bottom: 60px;
+  }
+  #commissions-page .commission-option h3 {
+    font-size: 30px;
+  }
+  #commissions-page .commission-option p {
+    font-size: 24px;
+    line-height: 41px;
+    width: 70%;
+  }
+  #commissions-page .button-container {
+    margin: 50px 0px;
+  }
+  #commissions-page .button-container .artists-toggle-btn {
+    font-size: 20px;
+  }
+  #commissions-page .button-container svg {
+    font-size: 23px;
+    margin-left: 8px;
+  }
+  #commissions-page .artists-list-container .available-artists h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  #commissions-page .artists-list-container .available-artists p {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  #commissions-page .mySwiper {
+    margin-bottom: 80px;
+  }
+  #commissions-page .painting-option {
+    margin-top: 30px img;
+    margin-top-width: 100%;
+    margin-top-height: 400px;
+    margin-top-object-fit: cover;
+  }
+  #commissions-page #commission-enquire-btn button {
+    padding: 20px 100px;
+  }
+  #voucher-page {
+    margin-bottom: 60px;
+  }
+  #voucher-page .page-contents {
+    position: relative;
+  }
+  #voucher-page .page-subtitle {
+    font-size: 30px;
+    margin-bottom: 100px;
+  }
+  #voucher-page .voucher-image {
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    margin-top: 20px;
+  }
+  #voucher-page .select-box {
+    width: 400px;
+  }
+  #voucher-page .select-box .select-label {
+    font-size: 20px;
+  }
+  #voucher-page #voucher-purchase-btn {
+    margin-top: 80px;
+    justify-content: left;
+  }
+}/*# sourceMappingURL=App.css.map */

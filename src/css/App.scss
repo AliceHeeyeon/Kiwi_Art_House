@@ -1,0 +1,22 @@
+// Fonts
+// font-family: 'Outfit', sans-serif;
+// font-family: 'Shippori Mincho B1', serif;
+// font-family: 'Work Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+// font-family: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+// font-family: 'Nunito Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap');
+
+// font-family: 'Quicksand', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+// Variables
+@import "modules/variables";
+
+// Responsive
+@import "modules/responsive/mobile";
+@import "modules/responsive/tablet";
+@import "modules/responsive/desktop";
