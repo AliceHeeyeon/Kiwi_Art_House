@@ -7,6 +7,7 @@ import { FiPlus } from "react-icons/fi";
 import { FiMinus } from "react-icons/fi";
 import useCustomiser from '../hooks/useCustomiser';
 import Loading from '../components/Loading';
+import { Helmet } from 'react-helmet';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -123,57 +124,79 @@ const Option2Examples = () => {
 }
 
   return (
-    <div id='commissions-page' className='page-style'>
+    <>
+      <Helmet>
+            <title>Kiwi Art House - Commissions</title>
+            {/* Primary Meta tags */}
+            <meta name='title' content='Kiwi Art House - Commissions page' />
+            <meta name='description' content={commissions[0].acf.option1_description} />
+            <meta name='keywords' content='Kiwi Art House, Wellington artists, New Zealand art,paintings, sculptures, contemporary art, fine art, gallery, art for sale, online art gallery' />
+            {/* Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Kiwi Art House - Commissions page" />
+            <meta property="og:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="og:description" content={commissions[0].acf.option1_description} />
+            <meta property="og:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+            {/* Twitter */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content="Kiwi Art House - Commissions page" />
+            <meta name="twitter:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="twitter:description" content={commissions[0].acf.option1_description} />
+            <meta property="twitter:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+          </Helmet>
 
-      <div className="button-container">
-          <BsArrowLeft/>
-          <button className='back-btn' onClick={() => navigate(-1)}>
-          BACK
-          </button>
-      </div>
+          <div id='commissions-page' className='page-style'>
 
-      <h2 className='page-title'>{commissions[0].title.rendered}</h2>
-      <div className='commission-option'>
-        <h3>{commissions[0].acf.custom_option1}</h3>
-        <p>{commissions[0].acf.option1_description}</p>
-      </div>
+          <div className="button-container">
+              <BsArrowLeft/>
+              <button className='back-btn' onClick={() => navigate(-1)}>
+              BACK
+              </button>
+          </div>
 
-      <div className='button-container'>
-        <button 
-          onClick={ToggleArtistsLists}
-          className='artists-toggle-btn'
-        >
-          <p>SEE AVAILABLE ARTISTS</p>
-        </button>
-        {isArtistsVisible ? <FiMinus /> : <FiPlus />} 
-      </div>
+          <h2 className='page-title'>{commissions[0].title.rendered}</h2>
+          <div className='commission-option'>
+            <h3>{commissions[0].acf.custom_option1}</h3>
+            <p>{commissions[0].acf.option1_description}</p>
+          </div>
 
-      {isArtistsVisible ? 
-        <div className='artists-list-container'>
-          <AllAvailableArtists/>
+          <div className='button-container'>
+            <button 
+              onClick={ToggleArtistsLists}
+              className='artists-toggle-btn'
+            >
+              <p>SEE AVAILABLE ARTISTS</p>
+            </button>
+            {isArtistsVisible ? <FiMinus /> : <FiPlus />} 
+          </div>
+
+          {isArtistsVisible ? 
+            <div className='artists-list-container'>
+              <AllAvailableArtists/>
+            </div>
+            : null}
+          
+          <Option1Examples/>
+          
+          <div className='commission-option'>
+            <h3>{commissions[0].acf.custom_option2}</h3>
+            <p>{commissions[0].acf.option2_description}</p>
+          </div>
+
+          <Option2Examples />
+
+          <div id='commission-enquire-btn' className='button-style'>
+            <button 
+              style={{ backgroundColor: mainColor }}
+              className='main-color'
+              onClick={() => navigate('/contact')}
+            >
+              ENQUIRE
+            </button>
+          </div>
+          
         </div>
-        : null}
-      
-      <Option1Examples/>
-      
-      <div className='commission-option'>
-        <h3>{commissions[0].acf.custom_option2}</h3>
-        <p>{commissions[0].acf.option2_description}</p>
-      </div>
-
-      <Option2Examples />
-
-      <div id='commission-enquire-btn' className='button-style'>
-        <button 
-          style={{ backgroundColor: mainColor }}
-          className='main-color'
-          onClick={() => navigate('/contact')}
-        >
-          ENQUIRE
-        </button>
-      </div>
-      
-    </div>
+    </>
     
   )
 }

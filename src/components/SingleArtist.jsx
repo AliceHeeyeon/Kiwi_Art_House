@@ -5,6 +5,7 @@ import { useArtworkContext } from '../context/ArtworkContext'
 import { BsArrowLeft } from "react-icons/bs";
 import useCustomiser from '../hooks/useCustomiser';
 import Loading from './Loading';
+import { Helmet } from 'react-helmet';
 
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
@@ -88,6 +89,26 @@ const SingleArtist = () => {
 
   return (
     <>
+        <Helmet>
+            <title>Kiwi Art House - Individual Artist</title>
+            {/* Primary Meta tags */}
+            <meta name='title' content='Kiwi Art House - Individual Artist page' />
+            <meta name='description' content='Artist biography and artworks' />
+            <meta name='keywords' content='Kiwi Art House, Wellington artists, New Zealand art,paintings, sculptures, contemporary art, fine art, gallery, art for sale, online art gallery' />
+            {/* Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Kiwi Art House - Individual Artist page" />
+            <meta property="og:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="og:description" content="Artist biography and artworks" />
+            <meta property="og:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+            {/* Twitter */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content="Kiwi Art House - Individual Artist page" />
+            <meta name="twitter:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="twitter:description" content="Artist biography and artworks" />
+            <meta property="twitter:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+        </Helmet>
+
         <div id='single-artist-page' className='page-style'>
 
             <div className="button-container">

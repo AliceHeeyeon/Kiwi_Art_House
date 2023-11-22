@@ -2,6 +2,7 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Loading from '../components/Loading';
+import { Helmet } from 'react-helmet';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -85,17 +86,39 @@ const PastExhibition = () => {
       }
 
   return (
-    <div id='past-exhibition' className='page-style'>
-      <h2 className='page-title'>Exhibitions</h2>
-      <h4 className='page-subtitle'>PAST</h4>
-      <p className='page-description'>
-        We hold about six or seven exhibitions each year. For supporters of the Gallery we send invitations to exhibition openings, other Gallery events and special offers.
-      </p>
+    <>
+      <Helmet>
+            <title>Kiwi Art House - Past Exhibition</title>
+            {/* Primary Meta tags */}
+            <meta name='title' content='Kiwi Art House - Past Exhibition page' />
+            <meta name='description' content='We hold about six or seven exhibitions each year. Find previous exhibition information here' />
+            <meta name='keywords' content='Kiwi Art House, Wellington artists, New Zealand art,paintings, sculptures, contemporary art, fine art, gallery, art for sale, online art gallery' />
+            {/* Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Kiwi Art House - Past Exhibition page" />
+            <meta property="og:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="og:description" content="We hold about six or seven exhibitions each year. Find previous exhibition information here" />
+            <meta property="og:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+            {/* Twitter */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content="Kiwi Art House - Past Exhibition page" />
+            <meta name="twitter:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="twitter:description" content="We hold about six or seven exhibitions each year. Find previous exhibition information here" />
+            <meta property="twitter:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+      </Helmet>
 
-      <div className='past-exhibition-display'>
-        <PastExhibitions exhibitions={exhibition} />
+      <div id='past-exhibition' className='page-style'>
+        <h2 className='page-title'>Exhibitions</h2>
+        <h4 className='page-subtitle'>PAST</h4>
+        <p className='page-description'>
+          We hold about six or seven exhibitions each year. For supporters of the Gallery we send invitations to exhibition openings, other Gallery events and special offers.
+        </p>
+
+        <div className='past-exhibition-display'>
+          <PastExhibitions exhibitions={exhibition} />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

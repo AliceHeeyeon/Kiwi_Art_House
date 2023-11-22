@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import useCustomiser from '../hooks/useCustomiser'
+import { Helmet } from 'react-helmet'
 
 const formEndpoint = import.meta.env.VITE_WP_CONTACT_FORM_URL
 
@@ -64,76 +65,98 @@ const ContactForm = () => {
   }
 
   return (
-    <div className='contact-form'>
-      <form
-        onSubmit = {handleSubmit}
-        method='POST'
-      >
-        {/* Name input */}
-        <div className='label-input'>
-            <label htmlFor='contact-name'>Name</label>
-            <input
-                id='contact-name'
-                type='text'
-                name='name'
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-                required
-            />
-        </div>
+    <>
+      <Helmet>
+            <title>Kiwi Art House - Contact</title>
+            {/* Primary Meta tags */}
+            <meta name='title' content='Kiwi Art House - Contact page' />
+            <meta name='description' content='Feel free to contact us if you have an inquiry' />
+            <meta name='keywords' content='Kiwi Art House, Wellington artists, New Zealand art,paintings, sculptures, contemporary art, fine art, gallery, art for sale, online art gallery' />
+            {/* Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Kiwi Art House - Contact page" />
+            <meta property="og:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="og:description" content="Feel free to contact us if you have an inquiry" />
+            <meta property="og:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+            {/* Twitter */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content="Kiwi Art House - Contact page" />
+            <meta name="twitter:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="twitter:description" content="Feel free to contact us if you have an inquiry" />
+            <meta property="twitter:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+          </Helmet>
 
-        {/* Email input */}
-        <div className='label-input'>
-            <label htmlFor='contact-email'>Email</label>
-            <input
-                id='contact-email'
-                type='email'
-                name='email'
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                required
-            />
-        </div>
+      <div className='contact-form'>
+        <form
+          onSubmit = {handleSubmit}
+          method='POST'
+        >
+          {/* Name input */}
+          <div className='label-input'>
+              <label htmlFor='contact-name'>Name</label>
+              <input
+                  id='contact-name'
+                  type='text'
+                  name='name'
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  required
+              />
+          </div>
 
-        {/* Phone input */}
-        <div className='label-input'>
-            <label htmlFor='contact-phone'>Phone</label>
-            <input
-                id='contact-phone'
-                type='text'
-                name='phone'
-                onChange={(e) => setPhone(e.target.value)}
-                value={phone}
-                required
-            />
-        </div>
+          {/* Email input */}
+          <div className='label-input'>
+              <label htmlFor='contact-email'>Email</label>
+              <input
+                  id='contact-email'
+                  type='email'
+                  name='email'
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  required
+              />
+          </div>
 
-        {/* Message input */}
-        <div className='label-input'>
-            <label htmlFor='contact-message'>Message</label>
-            <textarea
-                id='contact-message'
-                className='message'
-                name='message'
-                onChange={(e) => setMessage(e.target.value)}
-                value={message}
-                required
-            />
-        </div>
+          {/* Phone input */}
+          <div className='label-input'>
+              <label htmlFor='contact-phone'>Phone</label>
+              <input
+                  id='contact-phone'
+                  type='text'
+                  name='phone'
+                  onChange={(e) => setPhone(e.target.value)}
+                  value={phone}
+                  required
+              />
+          </div>
 
-        <div className='button-style'>
-            <button
-                style={{ backgroundColor: mainColor }}
-                type='submit'
-                className='main-color'
-            >
-                SEND MESSAGE
-            </button>
-        </div>
-      </form>
-      
-      {statusMessage && <div className="status-message">{statusMessage}</div>}
-    </div>
+          {/* Message input */}
+          <div className='label-input'>
+              <label htmlFor='contact-message'>Message</label>
+              <textarea
+                  id='contact-message'
+                  className='message'
+                  name='message'
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                  required
+              />
+          </div>
+
+          <div className='button-style'>
+              <button
+                  style={{ backgroundColor: mainColor }}
+                  type='submit'
+                  className='main-color'
+              >
+                  SEND MESSAGE
+              </button>
+          </div>
+        </form>
+        
+        {statusMessage && <div className="status-message">{statusMessage}</div>}
+      </div>
+    </>
   )
 }
 

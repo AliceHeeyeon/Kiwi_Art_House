@@ -6,6 +6,7 @@ import Testimonials from '../components/Testimonials';
 import useCustomiser from '../hooks/useCustomiser';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
+import { Helmet } from 'react-helmet';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,11 +20,13 @@ const Home = () => {
   const [loading, setLoading] = useState(true)
   const [exhibition, setExhibition] = useState(null)
   const [newArt, setNewArt] = useState(null)
+  const [about, setAbout] = useState(null)
   const [slidesPerView, setSlidesPerView] = useState(1);
   const navigate = useNavigate()
 
   const exhibitionEndPoint = `${baseUrl}/posts?_embed`
   const newArtEndPoint = `${baseUrl}/new_art?_embed`
+  const aboutEndPoint = `${baseUrl}/about?_embed`
 
   const {mainColor ,sectionBgColor} = useCustomiser()
 
@@ -34,14 +37,19 @@ const Home = () => {
    const fetchExhibition = axios.get(exhibitionEndPoint)
    // fetch New Art data
    const fetchNewArt = axios.get(newArtEndPoint)
+   // fetch About data
+   const fetchAbout = axios.get(aboutEndPoint)
 
-   axios.all([fetchExhibition, fetchNewArt])
+   axios.all([fetchExhibition, fetchNewArt, fetchAbout])
     .then(axios.spread((...responses) => {
       const exhibitionResponse = responses[0]
       const newArtResponses = responses[1]
+      const fetchAbout = responses[2]
 
       setExhibition(exhibitionResponse.data)
       setNewArt(newArtResponses.data)
+      setAbout(fetchAbout.data)
+      console.log(about[0].acf.about_description);
       const timeout = setTimeout(() => setLoading(false), 1000);
     }))
     .catch((err) => {
@@ -105,110 +113,128 @@ const Home = () => {
   
 
   return (
-    <div id='home'>
-      <div className='hero'>
-        <div className='hero-text-area'>
-          <h5 className='title'>{exhibition[0].acf.exhibition_title}</h5>
-          <h1 className='artist-name'>{exhibition[0].title.rendered}</h1>
-          <p className='period'>{exhibition[0].acf.exhibition_period}</p>
-        </div>
+    <>
+      <Helmet>
+        <title>Kiwi Art House - Home</title>
+        {/* Primary Meta tags */}
+        <meta name='title' content='Kiwi Art House - Home page' />
+        <meta name='description' content={about[0].acf.about_description} />
+        <meta name='keywords' content='Kiwi Art House, Wellington artists, New Zealand art,paintings, sculptures, contemporary art, fine art, gallery, art for sale, online art gallery' />
+        {/* Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Kiwi Art House - Home page" />
+        <meta property="og:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+        <meta property="og:description" content={about[0].acf.about_description} />
+        <meta property="og:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Kiwi Art House - Home page" />
+        <meta name="twitter:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+        <meta property="twitter:description" content={about[0].acf.about_description} />
+        <meta property="twitter:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+      </Helmet>
+
+      <div id='home'>
+        <div className='hero'>
+          <div className='hero-text-area'>
+            <h5 className='title'>{exhibition[0].acf.exhibition_title}</h5>
+            <h1 className='artist-name'>{exhibition[0].title.rendered}</h1>
+            <p className='period'>{exhibition[0].acf.exhibition_period}</p>
+          </div>
+          
+          <div className='hero-image-area'>
+            <img src={exhibition[0].acf.image1.url} alt='hero-image'/>
+          </div>
+
+          <div id='view-exhibition' className="button-style">
+            <button 
+              style={{ backgroundColor: mainColor }} 
+              onClick={() => navigate('/current-exhibition')}
+              className='main-color'>
+                VIEW EXHIBITION
+            </button>
+          </div>
         
-        <div className='hero-image-area'>
-          <img src={exhibition[0].acf.image1.url} alt='hero-image'/>
         </div>
 
-        <div id='view-exhibition' className="button-style">
-          <button 
-            style={{ backgroundColor: mainColor }} 
-            onClick={() => navigate('/current-exhibition')}
-            className='main-color'>
-              VIEW EXHIBITION
-          </button>
+        <div className='new-art'>
+          <p className='section-title'>NEW ART</p>
+          <NewArts arts={newArt} />
         </div>
-       
-      </div>
 
-      <div className='new-art'>
-        <p className='section-title'>NEW ART</p>
-        <NewArts arts={newArt} />
-      </div>
-
-      <div className='featured'>
-        <p className='section-title'>FEATURED</p>
-        <div className='option-container'>
-          <div className='section-option'>
-            <div className='image-box'>
-              <img src='/custom-art.jpeg' alt='custom-made'/>
+        <div className='featured'>
+          <p className='section-title'>FEATURED</p>
+          <div className='option-container'>
+            <div className='section-option'>
+              <div className='image-box'>
+                <img src='/custom-art.jpeg' alt='custom-made'/>
+              </div>
+              <h4>Custom Made Arts</h4>
+              <button 
+              onClick={() => navigate('/commissions')}
+              className='view-btn'>
+                VIEW AVAILABLE OPTION
+                <IoMdArrowForward/>
+              </button>       
             </div>
-            <h4>Custom Made Arts</h4>
+
+            <div className='section-option'>
+              <div className='image-box'>
+                <img src='/gift-vouchers-card.png' alt='gift-voucher'/>
+              </div>
+              <h4>Gift Vouchers</h4>
+              <button 
+                onClick={() => navigate('/gifting')}
+                className='view-btn'
+              >
+              LEARN MORE
+                <IoMdArrowForward/>
+              </button>       
+            </div>
+
+          </div>
+        </div>
+
+        <div style={{ backgroundColor: mainColor }} className='about main-color'>
+          <div className='about-texts'>
+            <p className='section-title'>ABOUT</p>
+            <div className='about-description'>
+            {about[0].acf.about_description}
+            </div>
+
             <button 
-             onClick={() => navigate('/commissions')}
+            onClick={() => navigate('/about')}
             className='view-btn'>
-              VIEW AVAILABLE OPTION
+              READ MORE
               <IoMdArrowForward/>
-            </button>       
+            </button>
           </div>
 
-          <div className='section-option'>
-            <div className='image-box'>
-              <img src='/gift-vouchers-card.png' alt='gift-voucher'/>
-            </div>
-            <h4>Gift Vouchers</h4>
-            <button 
-              onClick={() => navigate('/gifting')}
-              className='view-btn'
-            >
-            LEARN MORE
-              <IoMdArrowForward/>
-            </button>       
+          <div className='about-image'>
+            <img src='/kiwiarthouse.jpeg' alt='about-image'/> 
+          </div>     
+        </div>
+
+        <div style={{ backgroundColor: sectionBgColor }} className='subscribe section-bg-color'>
+          <div className='subscribe-text-area'>
+            <p className='section-title'>SUBSCRIBE</p>
+            <h4>Stay up to date on Kiwi Art House exhibitions, news, events and artists updates</h4>
           </div>
-
-        </div>
-      </div>
-
-      <div style={{ backgroundColor: mainColor }} className='about main-color'>
-        <div className='about-texts'>
-          <p className='section-title'>ABOUT</p>
-          <div className='about-description'>
-          The Kiwi Art House Gallery owned and operated by Alan Aldridge. 
-            <p>
-            Our emphasis is on paintings from well known and developing Wellington artists, but we also represent some international artists resident in New Zealand and other artists from around the country. 
-            </p>
-          We hold about six or seven exhibitions each year. Come and enjoy a curated selection of artworks.
+          <div className='signup-btn'>
+            <button className='view-btn'>
+                SIGN UP
+                <IoMdArrowForward/>
+            </button>
           </div>
-
-          <button 
-          onClick={() => navigate('/about')}
-          className='view-btn'>
-            READ MORE
-            <IoMdArrowForward/>
-          </button>
         </div>
 
-        <div className='about-image'>
-          <img src='/kiwiarthouse.jpeg' alt='about-image'/> 
-        </div>     
-      </div>
-
-      <div style={{ backgroundColor: sectionBgColor }} className='subscribe section-bg-color'>
-        <div className='subscribe-text-area'>
-          <p className='section-title'>SUBSCRIBE</p>
-          <h4>Stay up to date on Kiwi Art House exhibitions, news, events and artists updates</h4>
+        <div className='testimonials'>
+          <p className='section-title'>TESTIMONIALS</p>
+            <Testimonials/>
         </div>
-        <div className='signup-btn'>
-          <button className='view-btn'>
-              SIGN UP
-              <IoMdArrowForward/>
-          </button>
-        </div>
-      </div>
-
-      <div className='testimonials'>
-        <p className='section-title'>TESTIMONIALS</p>
-          <Testimonials/>
-      </div>
-     
-    </div> //end of home
+      
+      </div> //end of home
+    </>
   )
 }
 

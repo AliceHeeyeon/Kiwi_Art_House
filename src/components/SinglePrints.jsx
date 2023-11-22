@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { BsArrowLeft } from "react-icons/bs";
 import useCustomiser from '../hooks/useCustomiser';
 import Loading from './Loading';
+import { Helmet } from 'react-helmet';
 
 const printsEndPoint = import.meta.env.VITE_WP_PRODUCTS_URL
 
@@ -41,27 +42,49 @@ const SinglePrints = () => {
     }
 
   return (
-    <div id='single-print-page' className='page-style'>
-        <div className="button-container">
-            <BsArrowLeft/>
-            <button className='back-btn' onClick={() => navigate(-1)}>
-                BACK
-            </button>
-        </div>
+    <>
+        <Helmet>
+            <title>Buy High-Quality Artwork Prints | Kiwi Art House</title>
+            {/* Primary Meta tags */}
+            <meta name='title' content='Buy High-Quality Artwork Prints | Kiwi Art House' />
+            <meta name='description' content='Discover and purchase high-quality prints of exceptional artwork at Kiwi Art House. Explore our collection of unique, finely-crafted prints available for art lovers.' />
+            <meta name='keywords' content='Kiwi Art House, Wellington artists, New Zealand art,paintings, sculptures, contemporary art, fine art, gallery, art for sale, online art gallery' />
+            {/* Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Buy High-Quality Artwork Prints | Kiwi Art House" />
+            <meta property="og:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="og:description" content="Discover and purchase high-quality prints of exceptional artwork at Kiwi Art House. Explore our collection of unique, finely-crafted prints available for art lovers." />
+            <meta property="og:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+            {/* Twitter */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content="Buy High-Quality Artwork Prints | Kiwi Art House" />
+            <meta name="twitter:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="twitter:description" content="Discover and purchase high-quality prints of exceptional artwork at Kiwi Art House. Explore our collection of unique, finely-crafted prints available for art lovers." />
+            <meta property="twitter:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+        </Helmet>
 
-        <h2 className='page-title'>{print.name}</h2>
-        <div className='print-artist'>
-            <span>by </span>
-            <h3 dangerouslySetInnerHTML={{__html: print.short_description }} />
-        </div>
-        <img className='print-image' src={print.images[0].src} alt={print.slug} />
-        <p className='print-description' dangerouslySetInnerHTML={{__html: print.description}}/>
-        <h5 className="print-price">${priceWithNoDecimal(print.prices.price)}</h5>
+        <div id='single-print-page' className='page-style'>
+            <div className="button-container">
+                <BsArrowLeft/>
+                <button className='back-btn' onClick={() => navigate(-1)}>
+                    BACK
+                </button>
+            </div>
 
-        <div id='print-purchase-btn' className="button-style">
-            <button style={{ backgroundColor: mainColor }} className='main-color'>PURCHASE</button>
+            <h2 className='page-title'>{print.name}</h2>
+            <div className='print-artist'>
+                <span>by </span>
+                <h3 dangerouslySetInnerHTML={{__html: print.short_description }} />
+            </div>
+            <img className='print-image' src={print.images[0].src} alt={print.slug} />
+            <p className='print-description' dangerouslySetInnerHTML={{__html: print.description}}/>
+            <h5 className="print-price">${priceWithNoDecimal(print.prices.price)}</h5>
+
+            <div id='print-purchase-btn' className="button-style">
+                <button style={{ backgroundColor: mainColor }} className='main-color'>PURCHASE</button>
+            </div>
         </div>
-    </div>
+    </>
   )
 }
 

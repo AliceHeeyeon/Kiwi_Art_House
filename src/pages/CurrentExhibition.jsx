@@ -2,6 +2,7 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Loading from '../components/Loading';
+import { Helmet } from 'react-helmet';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -36,6 +37,7 @@ const CurrentExhibition = () => {
           });
     },[])
 
+    
     if (loading) {
         return (<Loading/>)
       }
@@ -72,23 +74,45 @@ const CurrentExhibition = () => {
     }
 
   return (
-    <div id='current-exhibition' className='page-style'>
-      <h2 className='page-title'>Exhibitions</h2>
-      <h4 className='page-subtitle'>CURRENT</h4>
+    <>
+        <Helmet>
+            <title>Kiwi Art House - Current Exhibition</title>
+            {/* Primary Meta tags */}
+            <meta name='title' content='Kiwi Art House - Current Exhibition page' />
+            <meta name='description' content={exhibition[0].content.rendered} />
+            <meta name='keywords' content='Kiwi Art House, Wellington artists, New Zealand art,paintings, sculptures, contemporary art, fine art, gallery, art for sale, online art gallery' />
+            {/* Facebook */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Kiwi Art House - Current Exhibition page" />
+            <meta property="og:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="og:description" content={exhibition[0].content.rendered} />
+            <meta property="og:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+            {/* Twitter */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content="Kiwi Art House - Current Exhibition page" />
+            <meta name="twitter:url" content="https://kiwi-art-house.vercel.app/#/"></meta>
+            <meta property="twitter:description" content={exhibition[0].content.rendered} />
+            <meta property="twitter:image" content="https://kiwi-art-house.vercel.app/logo-art.png" />
+        </Helmet>
 
-      <div className='current-text-area'>
-          <h5 className='title'>{exhibition[0].acf.exhibition_title}</h5>
-          <h1 className='artist-name'>{exhibition[0].title.rendered}</h1>
-          <p className='period'>{exhibition[0].acf.exhibition_period}</p>
-          <div className='description'>
-          The first exhibition for The Kiwi Art House Gallery at it's new location, 225 Cuba St, is for Kapiti Coast artist Ronda Thompson. Ronda's rendering of intricate detail using textured oil with a palette knife combined with her paintings' tendency towards the drama of evening or morning light has made her work identifiable and unique. This new collection covers her traditional Wellington city and shore themes along with South Island beauty spots special to the artist.
-          </div>
+        <div id='current-exhibition' className='page-style'>
+            <h2 className='page-title'>Exhibitions</h2>
+            <h4 className='page-subtitle'>CURRENT</h4>
+
+            <div className='current-text-area'>
+                <h5 className='title'>{exhibition[0].acf.exhibition_title}</h5>
+                <h1 className='artist-name'>{exhibition[0].title.rendered}</h1>
+                <p className='period'>{exhibition[0].acf.exhibition_period}</p>
+                <div 
+                    dangerouslySetInnerHTML={{__html: exhibition[0].content.rendered}}
+                    className='description'
+                />
+                <div className='current-image-area'>
+                    <DisplayAllImages exhibition={exhibition} />
+                </div>
+            </div>
         </div>
-        
-        <div className='current-image-area'>
-            <DisplayAllImages exhibition={exhibition} />
-        </div>
-    </div>
+    </>
   )
 }
 

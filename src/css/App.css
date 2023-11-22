@@ -47,6 +47,9 @@ nav #topnav {
   top: 20px;
   left: 30px;
 }
+nav #topnav #logo {
+  padding-top: 2px;
+}
 nav #topnav #logo img {
   width: 150px;
 }
@@ -327,6 +330,7 @@ input:focus {
   font-weight: 300;
   margin: 50px 0px 60px;
   line-height: 28px;
+  white-space: pre-line;
 }
 #home .about .about-texts .about-description p {
   margin: 20px 0px;
@@ -474,6 +478,7 @@ footer .copyright {
   font-size: 18px;
   font-weight: 300;
   line-height: 28px;
+  margin-bottom: 30px;
 }
 #current-exhibition .current-image-area img {
   height: 500px;
@@ -1258,6 +1263,7 @@ footer .copyright {
     font-size: 24px;
     line-height: 43px;
     width: 65%;
+    margin-bottom: 60px;
   }
   #current-exhibition .current-image-area img {
     height: 800px;
