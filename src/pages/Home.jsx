@@ -50,7 +50,8 @@ const Home = () => {
       setNewArt(newArtResponses.data)
       setAbout(fetchAbout.data)
       console.log(about[0].acf.about_description);
-      const timeout = setTimeout(() => setLoading(false), 1000);
+      setLoading(false)
+      // const timeout = setTimeout(() => setLoading(false), 1000);
     }))
     .catch((err) => {
       console.log(err)
