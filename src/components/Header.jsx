@@ -44,7 +44,7 @@ const Header = () => {
         <div id="topnav">
             <div id="logo">
                 <Link to='/'>
-                    <img src="/logo-white.png" alt="logo-white" />
+                    <img src="/logo-art.png" alt="logo-white" />
                 </Link>
             </div>
         </div>
