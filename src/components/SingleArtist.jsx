@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useArtworkContext } from '../context/ArtworkContext'
 import { BsArrowLeft } from "react-icons/bs";
 import useCustomiser from '../hooks/useCustomiser';
+import Loading from './Loading';
 
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
@@ -26,33 +27,29 @@ const SingleArtist = () => {
         artworkRef.current.scrollIntoView({ behavior: 'smooth' })
     }
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-    
     const singleArtistEndPoint = `${baseUrl}/artists/${id}`
 
     useEffect(() => {
         axios.get(singleArtistEndPoint)
         .then((res) => {
-            console.log(res.data)
             setArtist(res.data)
-            setLoading(false)
-            scrollToTop()
+            const timeout = setTimeout(() => setLoading(false), 1000);
         })
         .catch((err) => {
             console.log(err)
             setLoading(false)
         })
+
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
     },[])
 
-    if(loading) {
-        return (<div>Loading...</div>)
-    }
+    if (loading) {
+        return (<Loading/>)
+      }
 
     const DisplayAllArtworks = ({artist}) => {
         const artworks = []

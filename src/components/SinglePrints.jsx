@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { BsArrowLeft } from "react-icons/bs";
 import useCustomiser from '../hooks/useCustomiser';
+import Loading from './Loading';
 
 const printsEndPoint = import.meta.env.VITE_WP_PRODUCTS_URL
 
@@ -15,24 +16,25 @@ const SinglePrints = () => {
 
     const endPoint = `${printsEndPoint}/${id}`
 
-    function scrollToTop() {
+    useEffect(() => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-    }
+    },[])
 
     useEffect(() => {
         axios.get(endPoint)
         .then((res) => {
             setPrint(res.data)
-            setLoading(false)
+            const timeout = setTimeout(() => setLoading(false), 1000);
         })
         .catch((err) => console.log(err))
-        scrollToTop()
     },[endPoint])
 
-    if (loading) {return (<div>Loading...</div>)}
+    if (loading) {
+        return (<Loading/>)
+    }
 
     function priceWithNoDecimal(price) {
         return (price / 100).toFixed(0)

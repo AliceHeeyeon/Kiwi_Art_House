@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { FiPlus } from "react-icons/fi";
 import { FiMinus } from "react-icons/fi";
 import useCustomiser from '../hooks/useCustomiser';
+import Loading from '../components/Loading';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -31,12 +32,17 @@ const Commissions = () => {
     axios.get(commissionsUrl)
     .then((res)=> {
         setCommissions(res.data)
-        setLoading(false)
+        const timeout = setTimeout(() => setLoading(false), 1000);
     })
     .catch((err) => {
         console.log(err)
         setLoading(false)
     })
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  });
 
      // swiper slide change
      const handleResize = () => {
@@ -56,8 +62,8 @@ const Commissions = () => {
     
 },[])
 
-if(loading) {
-    return (<div>...Loading</div>)
+if (loading) {
+  return (<Loading/>)
 }
 
 const ToggleArtistsLists = () => {

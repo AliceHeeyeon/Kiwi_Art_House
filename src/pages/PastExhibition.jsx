@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Loading from '../components/Loading';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -23,12 +24,17 @@ const PastExhibition = () => {
         axios.get(exhibitionEndPoint)
         .then((res)=> {
             setExhibition(res.data)
-            setLoading(false)
+            const timeout = setTimeout(() => setLoading(false), 1000);
         })
         .catch((err)=> {
             console.log(err)
             setLoading(false)
         })
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
 
         // swiper slide change
         const handleResize = () => {
@@ -45,8 +51,8 @@ const PastExhibition = () => {
           return () => window.removeEventListener('resize', handleResize);
      },[])
 
-    if (loading) {
-        return (<div>Loading...</div>)
+     if (loading) {
+      return (<Loading/>)
     }
 
     const PastExhibitions = ({exhibitions}) => {

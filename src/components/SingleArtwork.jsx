@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { BsArrowLeft } from "react-icons/bs";
 import Enquire from "./Enquire";
 import useCustomiser from "../hooks/useCustomiser";
+import Loading from "./Loading";
 
 const SingleArtwork = () => {
     const {currentArtwork, setCurrentArtwork} = useArtworkContext()
@@ -14,18 +15,18 @@ const SingleArtwork = () => {
     const toggleEnquireForm = () => {
       setIsEnquireForm(!isEnquireForm)
     }
-    
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
 
     const handleEnquireForm = () => {
         setIsEnquireForm(true)
     }
+
+    useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+    },[])
 
     useEffect(() => {
         const storedArtwork = localStorage.getItem('currentArtwork');
@@ -37,11 +38,10 @@ const SingleArtwork = () => {
       } else {
           document.body.classList.remove('no-scroll');
       }
-        scrollToTop();
     },[isEnquireForm])
 
     if (!currentArtwork) {
-        return <div>Loading artwork...</div>;
+      return (<Loading/>)
     }
 
   return (

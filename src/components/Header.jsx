@@ -23,9 +23,21 @@ const Header = () => {
         setExhibitionIsOpen(!exhibitionIsOpen)
    }
 
+   const closeExhibitionMenu = () => {
+        setTimeout(() => {
+            setExhibitionIsOpen(false);
+        }, 1000);
+   };
+
    const toggleShopMenu = () => {
-    setShopIsOpen(!shopIsOpen)
-}
+        setShopIsOpen(!shopIsOpen)
+    }
+
+    const closeShopMenu = () => {
+        setTimeout(() => {
+            setShopIsOpen(false)
+        }, 1000);
+    }
 
   return (
     <nav style={{ backgroundColor: mainColor }} className="main-color">
@@ -43,6 +55,7 @@ const Header = () => {
                 <li id="exhibition"
                     className={exhibitionIsOpen ? 'active' : ''}
                     onClick={toggleExhibitionMenu}
+                    onMouseLeave={closeExhibitionMenu}
                 >
                     EXHIBITIONS
                     <ul className="menu-option-list">
@@ -63,6 +76,7 @@ const Header = () => {
                 <li id="shop"
                     className={shopIsOpen ? 'active' : ''}
                     onClick={toggleShopMenu}
+                    onMouseLeave={closeShopMenu}
                 >
                     SHOP
                     <ul className="menu-option-list">

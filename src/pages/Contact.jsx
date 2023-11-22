@@ -15,6 +15,13 @@ const ContactForm = () => {
   const {mainColor} = useCustomiser()
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  },[])
+
+  useEffect(() => {
     let timer;
     if (submitted || error) {
       timer = setTimeout(() => {

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Testimonials from '../components/Testimonials';
 import useCustomiser from '../hooks/useCustomiser';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -26,13 +27,6 @@ const Home = () => {
 
   const {mainColor ,sectionBgColor} = useCustomiser()
 
-  function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-  }
-
   useEffect(() => {
    setLoading(true)
 
@@ -48,13 +42,18 @@ const Home = () => {
 
       setExhibition(exhibitionResponse.data)
       setNewArt(newArtResponses.data)
-      setLoading(false)
-      scrollToTop()
+      const timeout = setTimeout(() => setLoading(false), 1000);
     }))
     .catch((err) => {
       console.log(err)
       setLoading(false)
     })
+
+    // Start from top view port
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
 
     // swiper slide change
     const handleResize = () => {
@@ -73,9 +72,8 @@ const Home = () => {
   },[])
 
   if (loading) {
-    return <div>Loading...</div>
+    return (<Loading/>)
   }
-
 
   const NewArts = ({arts}) => {
     const mappedArts = arts.map((art, index) => {
@@ -140,7 +138,7 @@ const Home = () => {
         <div className='option-container'>
           <div className='section-option'>
             <div className='image-box'>
-              <img src='/tatyana1.jpeg' alt='custom-made'/>
+              <img src='/custom-art.jpeg' alt='custom-made'/>
             </div>
             <h4>Custom Made Arts</h4>
             <button 
@@ -153,7 +151,7 @@ const Home = () => {
 
           <div className='section-option'>
             <div className='image-box'>
-              <img src='/gift.png' alt='gift-voucher'/>
+              <img src='/gift-vouchers-card.png' alt='gift-voucher'/>
             </div>
             <h4>Gift Vouchers</h4>
             <button 
@@ -179,7 +177,9 @@ const Home = () => {
           We hold about six or seven exhibitions each year. Come and enjoy a curated selection of artworks.
           </div>
 
-          <button className='view-btn'>
+          <button 
+          onClick={() => navigate('/about')}
+          className='view-btn'>
             READ MORE
             <IoMdArrowForward/>
           </button>

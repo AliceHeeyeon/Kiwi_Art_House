@@ -19,11 +19,13 @@
                 align-items: center;
                 justify-content: flex-end;
                 list-style: none;
+                cursor: pointer;
                
                 li {
                     padding-inline: 30px;
                     font-size: 20px;
                     font-weight: 300;
+
                     a {
                         color: $off-white;
                     }

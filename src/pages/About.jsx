@@ -2,6 +2,7 @@ import axios from 'axios'
 import {useEffect, useState} from 'react'
 import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
 
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
@@ -17,16 +18,22 @@ const About = () => {
         axios.get(aboutUrl)
         .then((res)=> {
             setAbout(res.data)
-            setLoading(false)
+            const timeout = setTimeout(() => setLoading(false), 1000);
         })
         .catch((err) => {
             console.log(err)
             setLoading(false)
         })
+        
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+      
     },[])
 
-    if(loading) {
-        return (<div>...Loading</div>)
+    if (loading) {
+      return (<Loading/>)
     }
 
     const AllStoreInfo = () => {

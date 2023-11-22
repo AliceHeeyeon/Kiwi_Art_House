@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Loading from '../components/Loading'
 
 const productsEndPoint = import.meta.env.VITE_WP_PRODUCTS_URL
 
@@ -8,29 +9,25 @@ const Prints = () => {
     const [loading, setLoading] = useState(true)
     const [prints, setPrints] = useState(null)
 
-    function scrollToTop() {
-      window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-      });
-    }
-
     useEffect(() => {
         axios.get(productsEndPoint)
         .then((res)=> {
             setPrints(res.data)
-            setLoading(false)
-            scrollToTop()
+            const timeout = setTimeout(() => setLoading(false), 1000);
         })
         .catch((err)=> {
             console.log(err)
             setLoading(false)
         })
         
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
     },[])
 
     if (loading) {
-        return (<div>Loading...</div>)
+      return (<Loading/>)
     }
 
     const PrintLists = ({prints}) => {

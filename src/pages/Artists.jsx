@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Loading from '../components/Loading'
 
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
@@ -10,28 +11,25 @@ const Artists = () => {
 
     const artistsEndPoint = `${baseUrl}/artists?_embed`
 
-    function scrollToTop() {
-      window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-      });
-    }
-
     useEffect(() => {
         axios.get(artistsEndPoint)
         .then((res)=> {
             setArtists(res.data)
-            setLoading(false)
-            scrollToTop()
+            const timeout = setTimeout(() => setLoading(false), 1000);
         })
         .catch((err)=> {
             console.log(err)
             setLoading(false)
         })
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
     },[])
 
     if (loading) {
-        return (<div>Loading...</div>)
+      return (<Loading/>)
     }
 
     const ArtistLists = ({artists}) => {

@@ -72,9 +72,10 @@ nav .desktop-menu .menu-option-list {
   color: white;
   list-style: none;
   padding: 15px 0px 10px;
-  margin-top: 5px;
+  margin-top: 10px;
   display: none;
   border-radius: 5px;
+  border: 1px solid white;
 }
 nav .desktop-menu .menu-option-list li {
   margin-bottom: 13px;
@@ -923,6 +924,50 @@ footer .copyright {
   margin-top: 30px;
 }
 
+.loading-box {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loading-box img {
+  width: 600px;
+  height: 500px;
+  margin-top: -150px;
+}
+.loading-box .loader {
+  display: block;
+  position: relative;
+  height: 12px;
+  width: 80%;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.loading-box .loader::after {
+  content: "";
+  width: 40%;
+  height: 100%;
+  background: #262626;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+@keyframes animloader {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+
 @media screen and (min-width: 992px) {
   nav {
     padding: 40px 70px;
@@ -940,6 +985,7 @@ footer .copyright {
     align-items: center;
     justify-content: flex-end;
     list-style: none;
+    cursor: pointer;
   }
   nav .desktop-menu #menu li {
     padding-inline: 30px;

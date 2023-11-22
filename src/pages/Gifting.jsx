@@ -4,6 +4,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import useCustomiser from '../hooks/useCustomiser';
+import Loading from '../components/Loading';
 
 const productsEndPoint = import.meta.env.VITE_WP_PRODUCTS_URL
 
@@ -19,17 +20,21 @@ const Gifting = () => {
         axios.get(productsEndPoint)
         .then((res)=> {
             setVouchers(res.data)
-            setLoading(false)
+            const timeout = setTimeout(() => setLoading(false), 1000);
         })
         .catch((err)=> {
             console.log(err)
             setLoading(false)
         })
         
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
     },[])
 
     if (loading) {
-        return (<div>Loading...</div>)
+      return (<Loading/>)
     }
 
     const FindVoucher = () => {
