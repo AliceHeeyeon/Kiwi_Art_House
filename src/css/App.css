@@ -452,9 +452,6 @@ footer .copyright {
   font-weight: 100;
 }
 
-#current-exhibition {
-  margin-bottom: 30px;
-}
 #current-exhibition .current-text-area {
   padding: 50px 0px 40px;
 }
@@ -478,7 +475,7 @@ footer .copyright {
   font-size: 18px;
   font-weight: 300;
   line-height: 28px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 #current-exhibition .current-image-area img {
   height: 500px;
@@ -974,6 +971,191 @@ footer .copyright {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .mobile-menu-container #close-nav-menu {
+    top: 40px;
+    right: 40px;
+    font-size: 30px;
+  }
+  .mobile-menu-container #mobile-menu {
+    margin: 110px 150px 0px;
+    font-size: 30px;
+  }
+  .mobile-menu-container #mobile-menu li {
+    margin-bottom: 45px;
+  }
+  .mobile-menu-container #mobile-menu .menu-option-list {
+    margin: 15px 0px;
+  }
+  #home .hero {
+    padding-inline: 50px;
+  }
+  #home .hero .hero-image-area {
+    margin-bottom: 40px;
+  }
+  #home .hero .hero-image-area img {
+    height: 350px;
+  }
+  #home .new-art {
+    padding: 0px 50px 60px;
+  }
+  #home .new-art .arts img {
+    height: 300px;
+  }
+  #home .new-art .arts h4 {
+    font-size: 22px;
+  }
+  #home .new-art .arts p {
+    font-size: 19px;
+  }
+  #home .featured {
+    padding-inline: 50px;
+  }
+  #home .about {
+    padding: 10px 50px 80px;
+  }
+  #home .subscribe {
+    padding: 10px 50px 80px;
+  }
+  #home .testimonials {
+    padding: 0px 50px 80px;
+  }
+  footer {
+    padding: 50px 50px 40px;
+  }
+  footer .footer-subscribe h4 {
+    font-size: 26px;
+  }
+  footer .footer-info-section .info-box .info-title {
+    font-size: 18px;
+  }
+  footer .footer-info-section .info-box ul {
+    font-size: 18px;
+  }
+  footer .copyright {
+    font-size: 16px;
+  }
+  #artists-page {
+    margin-bottom: 20px;
+  }
+  #artists-page h2 {
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+  }
+  #artists-page .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  #artists-page .artist-grid .artists-list img {
+    height: 300px;
+  }
+  #artists-page .artist-grid .artists-list h5 {
+    font-size: 22px;
+    margin-top: 5px;
+  }
+  .page-style {
+    padding: 50px;
+  }
+  .page-style .button-container svg {
+    font-size: 18px;
+  }
+  .page-style .button-container .back-btn {
+    font-size: 16px;
+  }
+  .page-style .page-title {
+    font-size: 35px;
+  }
+  .page-style .page-subtitle {
+    font-size: 22px;
+  }
+  .page-style .page-description {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .button-style button {
+    padding: 17px 70px;
+    font-size: 16px;
+  }
+  #single-artist-page .artist-menu button {
+    font-size: 18px;
+  }
+  #single-artist-page .artist-works {
+    margin: 80px 0px;
+  }
+  #single-artist-page .artist-works h4 {
+    font-size: 20px;
+  }
+  #single-artist-page .artist-works .artist-works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  #single-artist-page .artist-works .artwork img {
+    height: 300px;
+  }
+  #single-artist-page .artist-works .artwork p {
+    font-size: 20px;
+  }
+  .artist-biography {
+    padding: 50px;
+  }
+  .artist-biography h4 {
+    font-size: 22px;
+  }
+  .artist-biography .biography-body {
+    font-size: 20px;
+    line-height: 33px;
+  }
+  #prints-page .prints-grid-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  #prints-page .prints-list h5 {
+    font-size: 24px;
+  }
+  #prints-page .prints-list .print-artist {
+    font-size: 20px;
+  }
+  #contact-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #contact-page .contact-texts {
+    margin-top: 30px;
+  }
+  #contact-page .contact-texts .page-title {
+    width: 250px;
+  }
+  #contact-page .contact-texts .contact-info {
+    font-size: 20px;
+  }
+  .contact-form {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .contact-form .label-input {
+    padding-bottom: 15px;
+    margin-top: 40px;
+    font-size: 18px;
+  }
+  .contact-form .label-input input,
+  .contact-form .label-input textarea {
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  .contact-form button {
+    margin-top: 50px;
+  }
+  .contact-form .status-message {
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    font-size: 22px;
+    padding: 30px;
+  }
+}
 @media screen and (min-width: 992px) {
   nav {
     padding: 40px 70px;

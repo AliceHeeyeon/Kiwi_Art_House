@@ -1,4 +1,290 @@
 @media screen and (min-width: 768px) {
    
+    // Mobile menu
+    .mobile-menu-container {
+
+        #close-nav-menu {
+            top: 40px;
+            right: 40px;
+            font-size: 30px;
+        }
+
+        #mobile-menu {
+            margin: 110px 150px 0px;
+            font-size: 30px;
+
+            li {
+                margin-bottom: 45px;
+            }
+
+            .menu-option-list {
+                margin: 15px 0px;
+            }
+        }
+
+    }
+
+    // Home page
+    #home {
+        .hero {
+            padding-inline: 50px;
+        
+            .hero-image-area {
+                margin-bottom: 40px;
+                img {
+                    height: 350px;
+                }
+            }
+
+        }
+
+        .new-art {
+        padding: 0px 50px 60px;
+        
+            .arts {
+                img {
+                    height: 300px;  
+                }
+                h4 {
+                    font-size: 22px;
+                }
+                p {
+                    font-size: 19px;
+                }
+            }   
+        }
+
+        .featured {
+            padding-inline: 50px;
+        }
+
+        .about {
+            padding: 10px 50px 80px;
+        }
+
+        .subscribe {
+            padding: 10px 50px 80px;
+        }
+
+        .testimonials {
+            padding: 0px 50px 80px;
+        }
+
+    }// end of home
+
+    //Footer
+    footer {
+        padding: 50px 50px 40px;
+
+        .footer-subscribe {
+            h4{
+                font-size: 26px;
+            }  
+        }
+
+        .footer-info-section {
+
+            .info-box {
+                .info-title {
+                    font-size: 18px;
+                }
+
+                ul {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .copyright {
+            font-size: 16px;
+        }
+    }
+
+    // Artists page
+    #artists-page {
+        margin-bottom: 20px;
+
+        h2 {
+            padding-bottom: 40px;
+            margin-bottom: 60px;
+        }
+
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+
+            .artists-list {
+        
+                img {
+                    height: 300px;
+                }
+    
+                h5 {
+                    font-size: 22px;
+                    margin-top: 5px;
+                }
+            }
+        }
+        
+    }
+
+
+    //Repeat section style
+    .page-style {
+        padding: 50px;
+    
+        .button-container {
+            
+            svg {
+                font-size: 18px;
+            }
+    
+            .back-btn {
+                font-size: 16px;
+            }
+        }
+        
+    
+        .page-title {
+            font-size: 35px;
+        }
+        .page-subtitle {
+            font-size: 22px;
+        }
+        .page-description {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+    
+    .button-style {
+    
+        button {
+            padding: 17px 70px;
+            font-size: 16px;
+        }   
+        
+    }
+
+    // Single Artist page
+    #single-artist-page {
+
+        .artist-menu {
+            button {
+                font-size: 18px;
+            }   
+        }
+
+        .artist-works {
+            margin: 80px 0px;
+
+            h4 {
+                font-size: 20px;
+            }
+
+            .artist-works-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .artwork {
+                img {
+                    height: 300px;
+                }
+
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .artist-biography {
+        padding: 50px;
+
+        h4 {
+            font-size: 22px;
+        }
+
+        .biography-body {
+            font-size: 20px;
+            line-height: 33px;
+        }
+    }
+
+    // Prints
+    #prints-page {
+
+        .prints-grid-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .prints-list {
+
+            h5 {
+                font-size: 24px;
+            }
+
+            .print-artist {
+                font-size: 20px;
+            }
+
+        }
+    }
+
+    // Contact
+    #contact-page {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .contact-texts {
+            margin-top: 30px;
+
+            .page-title {
+                width: 250px;
+            }
+    
+            .contact-info {
+                font-size: 20px;
+            }
+        }
+       
+    }
+
+    .contact-form {
+        margin-bottom: 30px;
+        position: relative;
+
+        .label-input {
+            padding-bottom: 15px;
+            margin-top: 40px;
+            font-size: 18px;
+            
+            input,
+            textarea {
+                margin-left: 10px;
+                font-size: 18px;   
+            }
+    
+        }
+
+        button {
+            margin-top: 50px;
+        }
+        
+        .status-message {
+            position: absolute;
+            bottom: 200px;
+            left: 0;
+            font-size: 22px;
+            padding: 30px;
+        }
+        
+    }
+
     
 }

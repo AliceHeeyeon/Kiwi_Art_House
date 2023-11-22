@@ -233,7 +233,7 @@ const Home = () => {
             <Testimonials/>
         </div>
       
-      </div> //end of home
+      </div>
     </>
   )
 }
