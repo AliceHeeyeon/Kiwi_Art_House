@@ -789,6 +789,7 @@ footer .copyright {
 }
 #voucher-page .voucher-image {
   margin: 50px 0px;
+  width: 100%;
 }
 #voucher-page .select-box .select-label {
   font-size: 18px;
@@ -1581,8 +1582,10 @@ footer .copyright {
     position: absolute;
     top: 0;
     right: 0;
-    width: 400px;
-    margin-top: 20px;
+    width: 40vw;
+    height: 450px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   #voucher-page .select-box {
     width: 400px;
