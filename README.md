@@ -51,3 +51,7 @@ useEffect(() => {
 
 > Project Mockups
 
+![mockup1](./public/image-1.png)
+![mockup2](./public/image-2.png)
+![mockup3](./public/image-3.png)
+![mockup4](./public/image-4.png)
