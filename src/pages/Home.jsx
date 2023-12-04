@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { Helmet } from 'react-helmet';
 
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -82,6 +83,19 @@ const Home = () => {
 
   if (loading) {
     return (<Loading/>)
+  }
+
+  // Scroll to Subscribe
+  const scrollToSubscribe = () => {
+    const subscribe = document.getElementById('subscribe');
+
+    const subscribePosition = subscribe.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({
+      top: subscribePosition,
+      behavior: 'smooth'
+    });
+  
   }
 
   const NewArts = ({arts}) => {
@@ -221,7 +235,7 @@ const Home = () => {
             <p className='section-title'>SUBSCRIBE</p>
             <h4>Stay up to date on Kiwi Art House exhibitions, news, events and artists updates</h4>
           </div>
-          <div className='signup-btn'>
+          <div onClick={() => scrollToSubscribe()} className='signup-btn'>
             <button className='view-btn'>
                 SIGN UP
                 <IoMdArrowForward/>

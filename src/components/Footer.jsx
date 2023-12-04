@@ -13,7 +13,9 @@ const Footer = () => {
 
   return (
     <footer style={{ backgroundColor: mainColor }} className="main-color">
-      <div className='footer-subscribe'>
+      <div  
+        id="subscribe" className='footer-subscribe'
+      >
         <h4>Subscribe to our newsletter</h4>
       
         <div className='input-container'>

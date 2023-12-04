@@ -13,14 +13,6 @@ const SingleArtwork = () => {
     const navigate = useNavigate()
     const {mainColor} = useCustomiser()
 
-    const toggleEnquireForm = () => {
-      setIsEnquireForm(!isEnquireForm)
-    }
-
-    const handleEnquireForm = () => {
-        setIsEnquireForm(true)
-    }
-
     useEffect(() => {
       window.scrollTo({
         top: 0,
@@ -28,6 +20,14 @@ const SingleArtwork = () => {
         behavior: 'smooth'
     });
     },[])
+
+    const toggleEnquireForm = () => {
+      setIsEnquireForm(!isEnquireForm)
+    }
+
+    const handleEnquireForm = () => {
+        setIsEnquireForm(true)
+    }
 
     useEffect(() => {
         const storedArtwork = localStorage.getItem('currentArtwork');
