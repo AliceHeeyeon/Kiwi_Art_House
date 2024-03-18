@@ -96,13 +96,13 @@ const Home = () => {
   
   }
 
-  const NewArts = ({arts}) => {
-    const mappedArts = arts.map((art, index) => {
+  const NewArts = ({Arts}) => {
+    const mappedArts = Arts.map((art, index) => {
       return (
-        <SwiperSlide key={art.slug + "-" + index} className='arts'>
-            <img src={art.acf.image.url} alt={art.slug}/>
-            <h4>{art.title.rendered}</h4>
-            <p>By {art.acf.artist_name}</p>
+        <SwiperSlide key={art.title + "-" + index} className='arts'>
+            <img src={art.image} alt={art.title}/>
+            <h4>{art.title}</h4>
+            <p>By {art.artist_name}</p>
             <button className='view-btn'>
               VIEW
               <IoMdArrowForward/>
@@ -171,7 +171,7 @@ const Home = () => {
 
         <div className='new-art'>
           <p className='section-title'>NEW ART</p>
-          <NewArts arts={newArt} />
+          <NewArts Arts={imageUrls.find((item) => item.category === 'New arts').image} />;
         </div>
 
         <div className='featured'>
