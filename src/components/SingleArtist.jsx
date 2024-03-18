@@ -59,8 +59,10 @@ const SingleArtist = () => {
         }
 
         const mappedArtworks = artworks.map((artwork, index) => {
-            const imageUrl = artwork.url.replace('http://', 'https://https.');
-            if (artwork) {
+            
+            if (artwork && artwork.url) {
+                const imageUrl = artwork.url.replace('http://', 'https://https.');
+                
                 return (
                     <div key={index} 
                     onClick={() => {
