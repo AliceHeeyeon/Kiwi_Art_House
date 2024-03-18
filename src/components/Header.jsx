@@ -71,7 +71,7 @@ const Header = () => {
                 <li>
                     <Link to='/about'>ABOUT</Link>
                 </li>
-                <li id="shop"
+                {/* <li id="shop"
                     className={shopIsOpen ? 'active' : ''}
                     onClick={toggleShopMenu}
                     onMouseLeave={closeShopMenu}
@@ -88,7 +88,7 @@ const Header = () => {
                 </li>
                 <li>
                     <Link to='/gifting'>GIFTING</Link>
-                </li>
+                </li> */}
                 <li>
                     <Link to='/contact'>CONTACT</Link>
                 </li>

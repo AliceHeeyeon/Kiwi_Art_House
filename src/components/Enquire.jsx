@@ -57,6 +57,8 @@ const Enquire = ({closeMethod}) => {
     
       }
 
+      const artworkImage = currentArtwork.url.replace('http://', 'https://https.');
+
   return (
     <>
         <div id='filter-bg'></div>
@@ -124,7 +126,7 @@ const Enquire = ({closeMethod}) => {
                 </div>
 
                 <div className='enquire-artwork'>
-                    <img src={currentArtwork.url} alt={currentArtwork.title} />
+                    <img src={artworkImage} alt={currentArtwork.title} />
                     <div className='artwork-info'>
                         <h3>{currentArtwork.title}</h3>
                         <p>{currentArtwork.caption}</p>

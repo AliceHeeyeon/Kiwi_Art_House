@@ -31,7 +31,7 @@ const MobileMenu = ({closeMethod}) => {
         <li>
             <Link to='/about' onClick={closeMethod}>About</Link>
         </li>
-        <li className='top-level-menu'>
+        {/* <li className='top-level-menu'>
             <span>
                 Shop
                 <GoChevronDown />
@@ -47,7 +47,7 @@ const MobileMenu = ({closeMethod}) => {
         </li>
         <li>
             <Link to='/gifting' onClick={closeMethod}>Gifting</Link>
-        </li>
+        </li> */}
         <li>
             <Link to='/contact' onClick={closeMethod}>Contact</Link>
         </li>

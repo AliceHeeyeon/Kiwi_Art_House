@@ -48,6 +48,7 @@ const SingleArtist = () => {
     if (loading) {
         return (<Loading/>)
       }
+    const artistMainImage = artist.acf.artist_works1.url.replace('http://', 'https://https.');
 
     const DisplayAllArtworks = ({artist}) => {
         const artworks = []
@@ -58,6 +59,7 @@ const SingleArtist = () => {
         }
 
         const mappedArtworks = artworks.map((artwork, index) => {
+            const imageUrl = artwork.url.replace('http://', 'https://https.');
             if (artwork) {
                 return (
                     <div key={index} 
@@ -69,7 +71,7 @@ const SingleArtist = () => {
                     }}
                     className='artwork'
                     >
-                        <img src={artwork.url} alt={artwork.title}/>
+                        <img src={imageUrl} alt={artwork.title}/>
                         <p>{artwork.title}</p>
                     </div>
                 )
@@ -122,7 +124,7 @@ const SingleArtist = () => {
                     />
                 </div>
                 
-                <img className='artist-main-img' src={artist.acf.artist_works1.url} alt={artist.title.rendered} />
+                <img className='artist-main-img' src={artistMainImage} alt={artist.title.rendered} />
             </div>
 
             <div className='artist-menu'>
