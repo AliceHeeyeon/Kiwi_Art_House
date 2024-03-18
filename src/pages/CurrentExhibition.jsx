@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Loading from '../components/Loading';
 import { Helmet } from 'react-helmet';
-import imageUrls from '../../image_urls.json'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -43,12 +42,19 @@ const CurrentExhibition = () => {
         return (<Loading/>)
       }
 
-    const DisplayAllImages = ({images}) => {
-        const imageArray = Object.values(images);
-        const mappedImages = imageArray.map((image, index) => {
+    const DisplayAllImages = ({exhibition}) => {
+        const images = []
+        for (const key in exhibition[0].acf) {
+            if (exhibition[0].acf.hasOwnProperty(key) && key.startsWith("image")) {
+                images.push(exhibition[0].acf[key])
+            }   
+        }
+    
+        const mappedImages = images.map((image, index) => {
+            const imageUrl = image.url.replace('http://', 'https://https.');
             return (
                 <SwiperSlide key={index}>
-                    <img src={image} alt={`image ${index}`}/>
+                    <img src={imageUrl} alt={image.title}/>
                     <p>{image.title}</p>
                 </SwiperSlide>
             )
@@ -103,7 +109,7 @@ const CurrentExhibition = () => {
                     className='description'
                 />
                 <div className='current-image-area'>
-                    <DisplayAllImages images={imageUrls.find((item) => item.category === 'New exhibition').image} />
+                    <DisplayAllImages exhibition={exhibition} />
                 </div>
             </div>
         </div>
