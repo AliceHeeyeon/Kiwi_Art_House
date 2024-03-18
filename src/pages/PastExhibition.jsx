@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Loading from '../components/Loading';
 import { Helmet } from 'react-helmet';
+import imageUrls from '../../image_urls.json';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -57,14 +58,14 @@ const PastExhibition = () => {
     }
 
     const PastExhibitions = ({exhibitions}) => {
-        const mappedExhibitions = exhibition.map((exhibition, index) => {
+        const mappedExhibitions = exhibitions.map((exhibition, index) => {
           return (
-            <SwiperSlide key={exhibition.slug + "-" + index} className='past-exhibition'>
-                <img src={exhibition.acf.exhibition_image.url} alt={exhibition.slug}/>
-                <h4>{exhibition.acf.exhibition_title}</h4>
-                <h5>By {exhibition.acf.artist_name}</h5>
-                <p>{exhibition.acf.exhibition_period}</p>
-                <div className='past-exhibition-description'>{exhibition.acf.description}</div>
+            <SwiperSlide key={index} className='past-exhibition'>
+                <img src={exhibition.image} alt={exhibition.title}/>
+                <h4>{exhibition.title}</h4>
+                <h5>By {exhibition.artist_name}</h5>
+                <p>{exhibition.exhibition_period}</p>
+                <div className='past-exhibition-description'>{exhibition.description}</div>
             </SwiperSlide>
           )
         })
@@ -115,7 +116,7 @@ const PastExhibition = () => {
         </p>
 
         <div className='past-exhibition-display'>
-          <PastExhibitions exhibitions={exhibition} />
+          <PastExhibitions exhibitions={imageUrls.find((item) => item.category === 'Past Exhibition').image} />
         </div>
       </div>
     </>

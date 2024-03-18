@@ -35,10 +35,13 @@ const Artists = () => {
 
     const ArtistLists = ({artists}) => {
         const mappedArtists = artists.map((artist, index) => {
+
+          const imageUrl = artist.acf.artist_works1.url.replace('http://', 'https://https.');
+
           return (
             <div key={artist.slug + "-" + index} className='artists-list'>
               <Link to={`/artists/${artist.id}`}>
-                <img src={artist.acf.artist_works1.url} alt={artist.slug}/>
+                <img src={imageUrl} alt={artist.slug}/>
                 <h5>{artist.title.rendered}</h5>
               </Link>
             </div>

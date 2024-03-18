@@ -33,5 +33,32 @@
                         "image": "https://https.aliceinweb.net/wp-content/uploads/2023/11/Contact_with_nature_resized.jpg"
                     }
                 ]
+    },
+    {
+        "id": 2,
+        "category": "Past Exhibition",
+        "image":[
+                    {
+                        "title": "Beautiful New Zealand",
+                        "artist_name": "Miranda Woollett",
+                        "exhibition_period": "24 June - 16 July 2023",
+                        "image":"https://https.aliceinweb.net/wp-content/uploads/2023/11/blue-horizon.jpeg",
+                        "description": "Taupo artist Graham Moeller's New Zealand landscapes. Iconic places around Aotearoa are the subjects for renowned landscape artist Graham Moeller. In this exhibition he concentrates on the majesty of The South Island mountains."
+                    },
+                    {
+                        "title": "Possibilities",
+                        "artist_name":"Charlotte Hird",
+                        "exhibition_period": "28 July - 14 August 2023",
+                        "image": "https://https.aliceinweb.net/wp-content/uploads/2023/11/beautiful-nz-1.jpeg",
+                        "description": "I am trying to show the audience that what we see in everyday life over and over again may not be the only possibility to accept... there are an infinite number of ways of seeing or discovering things through art and science we just need to be open to seeing differently."
+                    },
+                    {
+                        "title": "In the Pool",
+                        "artist_name": "Joya de Geus",
+                        "exhibition_period": "31 May - 18 June 2023",
+                        "image": "https://https.aliceinweb.net/wp-content/uploads/2023/11/At_the_Pool.jpg",
+                        "description": "A collection of new batik/acrylic on canvas and some of her representative watercolours by Wellington artist Joya de Geus. Joya is most well known for her watercolours especially her seascapes where  she uses many different blues to create a unique style."
+                    }
+                ]
     }   
 ]
