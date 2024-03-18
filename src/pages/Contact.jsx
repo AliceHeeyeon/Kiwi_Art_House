@@ -1,6 +1,5 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
-import useCustomiser from '../hooks/useCustomiser'
 import { Helmet } from 'react-helmet'
 
 const formEndpoint = import.meta.env.VITE_WP_CONTACT_FORM_URL
@@ -13,7 +12,6 @@ const ContactForm = () => {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
-  const {mainColor} = useCustomiser()
 
   useEffect(() => {
     window.scrollTo({
@@ -145,7 +143,6 @@ const ContactForm = () => {
 
           <div className='button-style'>
               <button
-                  style={{ backgroundColor: mainColor }}
                   type='submit'
                   className='main-color'
               >

@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
 import { FiPlus } from "react-icons/fi";
 import { FiMinus } from "react-icons/fi";
-import useCustomiser from '../hooks/useCustomiser';
 import Loading from '../components/Loading';
 import { Helmet } from 'react-helmet';
 
@@ -16,7 +15,6 @@ import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
 
-
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL
 
 const Commissions = () => {
@@ -24,7 +22,6 @@ const Commissions = () => {
   const [loading, setLoading] = useState(true)
   const [isArtistsVisible, setIsArtistsVisible] = useState(false)
   const navigate = useNavigate()
-  const {mainColor} = useCustomiser()
   const [slidesPerView, setSlidesPerView] = useState(1);
 
   const commissionsUrl = `${baseUrl}/commissions?_embed`
@@ -187,7 +184,6 @@ const Option2Examples = () => {
 
           <div id='commission-enquire-btn' className='button-style'>
             <button 
-              style={{ backgroundColor: mainColor }}
               className='main-color'
               onClick={() => navigate('/contact')}
             >

@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react'
 import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
-import useCustomiser from '../hooks/useCustomiser';
 import Loading from '../components/Loading';
 import { Helmet } from 'react-helmet';
 
@@ -15,7 +14,6 @@ const Gifting = () => {
     const [showOptions, setShowOptions] = useState(false)
     const [selectedValue, setSelectedValue] = useState(null)
     const navigate = useNavigate()
-    const {mainColor} = useCustomiser()
     
     useEffect(() => {
         axios.get(productsEndPoint)
@@ -112,7 +110,6 @@ const Gifting = () => {
         
         <div id='voucher-purchase-btn' className='button-style'>
           <button 
-            style={{ backgroundColor: mainColor }}
             className='main-color'
           >
             PURCHASE
