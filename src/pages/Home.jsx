@@ -6,8 +6,6 @@ import Testimonials from '../components/Testimonials';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { Helmet } from 'react-helmet';
-import imageUrls from '../../image_urls.json'
-
 
 // Import Swiper styles
 import 'swiper/css';
@@ -96,13 +94,16 @@ const Home = () => {
   
   }
 
-  const NewArts = ({Arts}) => {
-    const mappedArts = Arts.map((art, index) => {
+  const heroImageUrl = exhibition[0].acf.image1.url.replace('http://', 'https://https.');
+
+  const NewArts = ({arts}) => {
+    const mappedArts = arts.map((art, index) => {
+      const imageUrl = art.acf.image.url.replace('http://', 'https://https.');
       return (
-        <SwiperSlide key={art.title + "-" + index} className='arts'>
-            <img src={art.image} alt={art.title}/>
-            <h4>{art.title}</h4>
-            <p>By {art.artist_name}</p>
+        <SwiperSlide key={art.slug + "-" + index} className='arts'>
+            <img src={imageUrl} alt={art.slug}/>
+            <h4>{art.title.rendered}</h4>
+            <p>By {art.acf.artist_name}</p>
             <button className='view-btn'>
               VIEW
               <IoMdArrowForward/>
@@ -156,7 +157,7 @@ const Home = () => {
           </div>
           
           <div className='hero-image-area'>
-            <img src={imageUrls[0].image.image1} alt='hero-image'/>
+            <img src={heroImageUrl} alt='hero-image'/>
           </div>
 
           <div id='view-exhibition' className="button-style">
@@ -171,7 +172,7 @@ const Home = () => {
 
         <div className='new-art'>
           <p className='section-title'>NEW ART</p>
-          <NewArts Arts={imageUrls.find((item) => item.category === 'New arts').image} />;
+          <NewArts arts={newArt} />
         </div>
 
         <div className='featured'>
