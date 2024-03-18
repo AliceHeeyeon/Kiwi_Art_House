@@ -2,7 +2,6 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { BsArrowLeft } from "react-icons/bs";
-import useCustomiser from '../hooks/useCustomiser';
 import Loading from './Loading';
 import { Helmet } from 'react-helmet';
 
@@ -13,7 +12,6 @@ const SinglePrints = () => {
     const navigate = useNavigate()
     const [print, setPrint] = useState(null)
     const [loading, setLoading] = useState(true)
-    const {mainColor} = useCustomiser()
 
     const endPoint = `${printsEndPoint}/${id}`
 
@@ -81,7 +79,7 @@ const SinglePrints = () => {
             <h5 className="print-price">${priceWithNoDecimal(print.prices.price)}</h5>
 
             <div id='print-purchase-btn' className="button-style">
-                <button style={{ backgroundColor: mainColor }} className='main-color'>PURCHASE</button>
+                <button className='main-color'>PURCHASE</button>
             </div>
         </div>
     </>

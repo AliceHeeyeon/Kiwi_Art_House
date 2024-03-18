@@ -35,6 +35,10 @@ body.no-scroll {
   position: fixed;
 }
 
+.main-color {
+  background-color: #262626;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -46,6 +50,7 @@ nav #topnav {
   position: absolute;
   top: 20px;
   left: 30px;
+  background-color: #262626;
 }
 nav #topnav #logo {
   padding-top: 2px;

@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useArtworkContext } from '../context/ArtworkContext'
 import { BsArrowLeft } from "react-icons/bs";
-import useCustomiser from '../hooks/useCustomiser';
 import Loading from './Loading';
 import { Helmet } from 'react-helmet';
 
@@ -17,8 +16,6 @@ const SingleArtist = () => {
     const {setCurrentArtwork} = useArtworkContext()
     const biographyRef = useRef(null)
     const artworkRef = useRef(null)
-    const {sectionBgColor} = useCustomiser()
-
 
     const scrollToBiography = () => {
         biographyRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -139,7 +136,7 @@ const SingleArtist = () => {
             </div>     
         </div>
 
-        <div ref={biographyRef} style={{ backgroundColor: sectionBgColor }} className='artist-biography section-bg-color'>
+        <div ref={biographyRef} className='artist-biography section-bg-color'>
             <h4>BIOGRAPHY</h4>
             <div className='biography-body' 
             dangerouslySetInnerHTML={{ __html: artist.content.rendered }} 

@@ -2,13 +2,11 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import MobileMenu from "./MobileMenu"
 import SegmentIcon from '@mui/icons-material/Segment';
-import useCustomiser from "../hooks/useCustomiser";
 
 const Header = () => {
     const [menuIsOpen, openMenu] = useState(false)
     const [exhibitionIsOpen, setExhibitionIsOpen] = useState(false)
     const [shopIsOpen, setShopIsOpen] = useState(false)
-    const {mainColor} = useCustomiser()
 
     const toggleMobileMenu = () => {
         openMenu(!menuIsOpen)
@@ -40,7 +38,7 @@ const Header = () => {
     }
 
   return (
-    <nav style={{ backgroundColor: mainColor }} className="main-color">
+    <nav className="main-color">
         <div id="topnav">
             <div id="logo">
                 <Link to='/'>

@@ -3,7 +3,6 @@ import { useArtworkContext } from "../context/ArtworkContext"
 import { useNavigate } from "react-router-dom"
 import { BsArrowLeft } from "react-icons/bs";
 import Enquire from "./Enquire";
-import useCustomiser from "../hooks/useCustomiser";
 import Loading from "./Loading";
 import { Helmet } from "react-helmet";
 
@@ -11,7 +10,6 @@ const SingleArtwork = () => {
     const {currentArtwork, setCurrentArtwork} = useArtworkContext()
     const [isEnquireForm, setIsEnquireForm] = useState(false)
     const navigate = useNavigate()
-    const {mainColor} = useCustomiser()
 
     useEffect(() => {
       window.scrollTo({
@@ -82,7 +80,6 @@ const SingleArtwork = () => {
 
         <div id="artwork-enquire-btn" className="button-style">
           <button 
-          style={{ backgroundColor: mainColor }}
           className="main-color"
           onClick={() => handleEnquireForm()}>ENQUIRE</button>
         </div>
