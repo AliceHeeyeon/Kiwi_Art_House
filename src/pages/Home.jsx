@@ -155,7 +155,7 @@ const Home = () => {
           </div>
           
           <div className='hero-image-area'>
-            <img src={exhibition[0].acf.image1.url} alt='hero-image'/>
+            <img src={exhibition[0].acf.image1.description} alt='hero-image'/>
           </div>
 
           <div id='view-exhibition' className="button-style">
