@@ -1,8 +1,6 @@
 import { IoMdArrowForward } from "react-icons/io";
-import useCustomiser from "../hooks/useCustomiser";
 
 const Footer = () => {
-  const {mainColor} = useCustomiser()
 
   function scrollToTop() {
     window.scrollTo({
@@ -12,8 +10,10 @@ const Footer = () => {
   }
 
   return (
-    <footer style={{ backgroundColor: mainColor }} className="main-color">
-      <div className='footer-subscribe'>
+    <footer className="main-color">
+      <div  
+        id="subscribe" className='footer-subscribe'
+      >
         <h4>Subscribe to our newsletter</h4>
       
         <div className='input-container'>

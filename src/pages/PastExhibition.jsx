@@ -58,9 +58,10 @@ const PastExhibition = () => {
 
     const PastExhibitions = ({exhibitions}) => {
         const mappedExhibitions = exhibition.map((exhibition, index) => {
+          const imageUrl = exhibition.acf.exhibition_image.url.replace('http://', 'https://https.');
           return (
             <SwiperSlide key={exhibition.slug + "-" + index} className='past-exhibition'>
-                <img src={exhibition.acf.exhibition_image.url} alt={exhibition.slug}/>
+                <img src={imageUrl} alt={exhibition.slug}/>
                 <h4>{exhibition.acf.exhibition_title}</h4>
                 <h5>By {exhibition.acf.artist_name}</h5>
                 <p>{exhibition.acf.exhibition_period}</p>

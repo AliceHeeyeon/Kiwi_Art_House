@@ -49,11 +49,12 @@ const CurrentExhibition = () => {
                 images.push(exhibition[0].acf[key])
             }   
         }
-
+    
         const mappedImages = images.map((image, index) => {
+            const imageUrl = image.url.replace('http://', 'https://https.');
             return (
                 <SwiperSlide key={index}>
-                    <img src={image.url} alt={image.title}/>
+                    <img src={imageUrl} alt={image.title}/>
                     <p>{image.title}</p>
                 </SwiperSlide>
             )

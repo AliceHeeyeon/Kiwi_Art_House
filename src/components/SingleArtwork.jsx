@@ -3,7 +3,6 @@ import { useArtworkContext } from "../context/ArtworkContext"
 import { useNavigate } from "react-router-dom"
 import { BsArrowLeft } from "react-icons/bs";
 import Enquire from "./Enquire";
-import useCustomiser from "../hooks/useCustomiser";
 import Loading from "./Loading";
 import { Helmet } from "react-helmet";
 
@@ -11,15 +10,6 @@ const SingleArtwork = () => {
     const {currentArtwork, setCurrentArtwork} = useArtworkContext()
     const [isEnquireForm, setIsEnquireForm] = useState(false)
     const navigate = useNavigate()
-    const {mainColor} = useCustomiser()
-
-    const toggleEnquireForm = () => {
-      setIsEnquireForm(!isEnquireForm)
-    }
-
-    const handleEnquireForm = () => {
-        setIsEnquireForm(true)
-    }
 
     useEffect(() => {
       window.scrollTo({
@@ -28,6 +18,14 @@ const SingleArtwork = () => {
         behavior: 'smooth'
     });
     },[])
+
+    const toggleEnquireForm = () => {
+      setIsEnquireForm(!isEnquireForm)
+    }
+
+    const handleEnquireForm = () => {
+        setIsEnquireForm(true)
+    }
 
     useEffect(() => {
         const storedArtwork = localStorage.getItem('currentArtwork');
@@ -44,6 +42,8 @@ const SingleArtwork = () => {
     if (!currentArtwork) {
       return (<Loading/>)
     }
+
+    const artworkImage = currentArtwork.url.replace('http://', 'https://https.');
 
   return (
     <>
@@ -76,13 +76,12 @@ const SingleArtwork = () => {
           </div>
 
         <h2 className='page-title'>{currentArtwork.title}</h2>
-        <img className="artwork-image" src={currentArtwork.url} alt={currentArtwork.title} />
+        <img className="artwork-image" src={artworkImage} alt={currentArtwork.title} />
         <p className="artwork-description">{currentArtwork.description}</p>
         <h5 className="artwork-price">{currentArtwork.caption}</h5>
 
         <div id="artwork-enquire-btn" className="button-style">
           <button 
-          style={{ backgroundColor: mainColor }}
           className="main-color"
           onClick={() => handleEnquireForm()}>ENQUIRE</button>
         </div>
@@ -95,4 +94,3 @@ const SingleArtwork = () => {
 }
 
 export default SingleArtwork
-

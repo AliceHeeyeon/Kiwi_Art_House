@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react'
 import { IoMdArrowForward } from "react-icons/io";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Testimonials from '../components/Testimonials';
-import useCustomiser from '../hooks/useCustomiser';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { Helmet } from 'react-helmet';
@@ -27,8 +26,6 @@ const Home = () => {
   const exhibitionEndPoint = `${baseUrl}/posts?_embed`
   const newArtEndPoint = `${baseUrl}/new_art?_embed`
   const aboutEndPoint = `${baseUrl}/about?_embed`
-
-  const {mainColor ,sectionBgColor} = useCustomiser()
 
   useEffect(() => {
    setLoading(true)
@@ -84,11 +81,27 @@ const Home = () => {
     return (<Loading/>)
   }
 
+  // Scroll to Subscribe
+  const scrollToSubscribe = () => {
+    const subscribe = document.getElementById('subscribe');
+
+    const subscribePosition = subscribe.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({
+      top: subscribePosition,
+      behavior: 'smooth'
+    });
+  
+  }
+
+  const heroImageUrl = exhibition[0].acf.image1.url.replace('http://', 'https://https.');
+
   const NewArts = ({arts}) => {
     const mappedArts = arts.map((art, index) => {
+      const imageUrl = art.acf.image.url.replace('http://', 'https://https.');
       return (
         <SwiperSlide key={art.slug + "-" + index} className='arts'>
-            <img src={art.acf.image.url} alt={art.slug}/>
+            <img src={imageUrl} alt={art.slug}/>
             <h4>{art.title.rendered}</h4>
             <p>By {art.acf.artist_name}</p>
             <button className='view-btn'>
@@ -144,12 +157,11 @@ const Home = () => {
           </div>
           
           <div className='hero-image-area'>
-            <img src={exhibition[0].acf.image1.url} alt='hero-image'/>
+            <img src={heroImageUrl} alt='hero-image'/>
           </div>
 
           <div id='view-exhibition' className="button-style">
             <button 
-              style={{ backgroundColor: mainColor }} 
               onClick={() => navigate('/current-exhibition')}
               className='main-color'>
                 VIEW EXHIBITION
@@ -196,7 +208,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div style={{ backgroundColor: mainColor }} className='about main-color'>
+        <div className='about main-color'>
           <div className='about-texts'>
             <p className='section-title'>ABOUT</p>
             <div className='about-description'>
@@ -216,12 +228,12 @@ const Home = () => {
           </div>     
         </div>
 
-        <div style={{ backgroundColor: sectionBgColor }} className='subscribe section-bg-color'>
+        <div className='subscribe section-bg-color'>
           <div className='subscribe-text-area'>
             <p className='section-title'>SUBSCRIBE</p>
             <h4>Stay up to date on Kiwi Art House exhibitions, news, events and artists updates</h4>
           </div>
-          <div className='signup-btn'>
+          <div onClick={() => scrollToSubscribe()} className='signup-btn'>
             <button className='view-btn'>
                 SIGN UP
                 <IoMdArrowForward/>

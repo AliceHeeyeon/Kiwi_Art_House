@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useArtworkContext } from '../context/ArtworkContext'
 import { BsArrowLeft } from "react-icons/bs";
-import useCustomiser from '../hooks/useCustomiser';
 import Loading from './Loading';
 import { Helmet } from 'react-helmet';
 
@@ -17,8 +16,6 @@ const SingleArtist = () => {
     const {setCurrentArtwork} = useArtworkContext()
     const biographyRef = useRef(null)
     const artworkRef = useRef(null)
-    const {sectionBgColor} = useCustomiser()
-
 
     const scrollToBiography = () => {
         biographyRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -51,6 +48,7 @@ const SingleArtist = () => {
     if (loading) {
         return (<Loading/>)
       }
+    const artistMainImage = artist.acf.artist_works1.url.replace('http://', 'https://https.');
 
     const DisplayAllArtworks = ({artist}) => {
         const artworks = []
@@ -61,7 +59,10 @@ const SingleArtist = () => {
         }
 
         const mappedArtworks = artworks.map((artwork, index) => {
-            if (artwork) {
+            
+            if (artwork && artwork.url) {
+                const imageUrl = artwork.url.replace('http://', 'https://https.');
+                
                 return (
                     <div key={index} 
                     onClick={() => {
@@ -72,7 +73,7 @@ const SingleArtist = () => {
                     }}
                     className='artwork'
                     >
-                        <img src={artwork.url} alt={artwork.title}/>
+                        <img src={imageUrl} alt={artwork.title}/>
                         <p>{artwork.title}</p>
                     </div>
                 )
@@ -125,7 +126,7 @@ const SingleArtist = () => {
                     />
                 </div>
                 
-                <img className='artist-main-img' src={artist.acf.artist_works1.url} alt={artist.title.rendered} />
+                <img className='artist-main-img' src={artistMainImage} alt={artist.title.rendered} />
             </div>
 
             <div className='artist-menu'>
@@ -139,7 +140,7 @@ const SingleArtist = () => {
             </div>     
         </div>
 
-        <div ref={biographyRef} style={{ backgroundColor: sectionBgColor }} className='artist-biography section-bg-color'>
+        <div ref={biographyRef} className='artist-biography section-bg-color'>
             <h4>BIOGRAPHY</h4>
             <div className='biography-body' 
             dangerouslySetInnerHTML={{ __html: artist.content.rendered }} 

@@ -49,6 +49,8 @@ const About = () => {
         )) : null;
     }
 
+    const aboutImage = about[0].acf['image-aboutpage'].url.replace('http://', 'https://https.');
+
   return (
     <>
       <Helmet>
@@ -82,7 +84,7 @@ const About = () => {
 
             <div className='about-gallery'>
               <h2 className='page-title'>{about[0].title.rendered}</h2>
-              <img className='gallery-image' src={about[0].acf['image-aboutpage'].url} alt={about[0].acf['image-aboutpage'].title} />
+              <img className='gallery-image' src={aboutImage} alt={about[0].acf['image-aboutpage'].title} />
               <p className='about-description'>{about[0].acf.about_description}</p>
             </div>
 
