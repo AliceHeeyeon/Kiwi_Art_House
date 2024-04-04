@@ -1,8 +1,57 @@
-# React + Vite
+# Kiwi Art House
+>
+> Project Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I redesigned the ‘Kiwi Art House Gallery’ website with WordPress and React. I implemented customisable features that allow for the adjustment of the background colour of the header and buttons. This flexibility enables simple changes to the website’s colour palette. 
 
-Currently, two official plugins are available:
+> Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Custom data fields
+- WooCommerce product management
+- Contact Form
+- customisation functionality(font, colour)
+
+> Code Snippet
+
+To enable customization functionality, register and establish customizer settings, then incorporate a corresponding control for it.
+```php
+// Register and define customizer settings here
+      $wp_customize->add_setting('background_color', array(
+        'default' => '#ffffff', // Default background color
+        'transport' => 'postMessage',
+      ));
+      
+      // Add a control for the background color
+      $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_color', array(
+        'label' => __('Background Color', 'custom-theme'),
+        'section' => 'colors',
+      )));
+```
+
+Then create useCusomiser hook, and get the data from the custom Rest API.
+All pages are effectively affected by importing the hook
+
+```javascript
+useEffect(() => {
+        axios.get(`${baseUrl}wp-json/custom-theme/v1/customizer-settings`)
+        .then((res) => {
+            const {backgroundColor, mainColor ,sectionBgColor, fontFamily} = res.data
+            setBgColor(backgroundColor)
+            setMainColor(mainColor)
+            setSectionBgColor(sectionBgColor)
+            setFont(fontFamily)
+        })
+        .catch((err) => console.error('Error fetching customizer setting:',err))
+    }, [baseUrl])
+
+  return (
+    {bgColor, mainColor ,sectionBgColor, font}
+  )
+```
+
+> Project Mockups
+
+![mockup1](./public/image-1.png)
+![mockup2](./public/image-2.png)
+![mockup3](./public/image-3.png)
+![mockup4](./public/image-4.png)

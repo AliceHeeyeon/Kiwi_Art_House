@@ -2,7 +2,6 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import { BsXLg } from "react-icons/bs";
 import { useArtworkContext } from "../context/ArtworkContext"
-import useCustomiser from '../hooks/useCustomiser';
 
 const enquireFormUrl = import.meta.env.VITE_WP_ENQUIRE_FORM_URL
 
@@ -15,7 +14,6 @@ const Enquire = ({closeMethod}) => {
     const [phone, setPhone] = useState("")
     const [message, setMessage] = useState("") 
     const {currentArtwork} = useArtworkContext()
-    const {mainColor} = useCustomiser()
 
     useEffect(() => {
         let timer;
@@ -58,6 +56,8 @@ const Enquire = ({closeMethod}) => {
           })
     
       }
+
+      const artworkImage = currentArtwork.url.replace('http://', 'https://https.');
 
   return (
     <>
@@ -126,7 +126,7 @@ const Enquire = ({closeMethod}) => {
                 </div>
 
                 <div className='enquire-artwork'>
-                    <img src={currentArtwork.url} alt={currentArtwork.title} />
+                    <img src={artworkImage} alt={currentArtwork.title} />
                     <div className='artwork-info'>
                         <h3>{currentArtwork.title}</h3>
                         <p>{currentArtwork.caption}</p>
@@ -135,7 +135,6 @@ const Enquire = ({closeMethod}) => {
 
                 <div className='button-style'>
                     <button
-                        style={{ backgroundColor: mainColor }}
                         type='submit'
                         className='main-color'
                     >
