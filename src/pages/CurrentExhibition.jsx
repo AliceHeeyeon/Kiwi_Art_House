@@ -51,20 +51,14 @@ const CurrentExhibition = () => {
         }
     
         const mappedImages = images.map((image, index) => {
-            // Ensure image.url is a string
-            if (typeof image.url === 'string') {
-                // Replace 'http://' with 'https://https.'
-                const imageUrl = image.url.replace('http://', 'https://https.');
-                // Use imageUrl further in your code
-                console.log(imageUrl);
-            } else {
-                // Handle the case where image.url is not a string
-                console.error('image.url is not a string.');
-            }
+            // Convert image.url to a string
+            const imageUrl = String(image.url);
+            // Replace 'http://' with 'https://https.'
+            const modifiedImageUrl = imageUrl.replace('http://', 'https://https.');
 
             return (
                 <SwiperSlide key={index}>
-                    {/* <img src={image.url} alt={image.title}/> */}
+                    <img src={modifiedImageUrl} alt={image.title}/>
                     <p>{image.title}</p>
                 </SwiperSlide>
             )
