@@ -51,8 +51,8 @@ const CurrentExhibition = () => {
         }
     
         const mappedImages = images.map((image, index) => {
-            const imageUrl = image.url.replace('http://', 'https://https.');
-            console.log(imageUrl);
+            // const imageUrl = image.url.replace('http://', 'https://https.');
+            console.log(image);
             return (
                 <SwiperSlide key={index}>
                     {/* <img src={image.url} alt={image.title}/> */}
